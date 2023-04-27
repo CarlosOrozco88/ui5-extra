@@ -9,15 +9,8 @@ import { support, system } from 'sap/ui/Device';
  * Constructor for a new <code>dev.carlosorozco.ui5Extra.Text</code> control.
  *
  * Extends sap.m.Text and adds extra features
- * @extends sap.m.Text
  *
- * @author CarlosOrozco88
- * @version ${version}
- *
- * @constructor
- * @public
- * @module dev.carlosorozco.ui5Extra.Text
- * @name dev.carlosorozco.ui5Extra.Text
+ * @namespace dev.carlosorozco.ui5Extra
  */
 export default class Text extends TextM {
   constructor(id?: string | $TextSettings_1);
