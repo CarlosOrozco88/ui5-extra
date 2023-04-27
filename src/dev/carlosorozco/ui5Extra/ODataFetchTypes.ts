@@ -232,3 +232,16 @@ export type ResolverParams<T = Record<string, unknown>> = T & {
   success?: Function;
   error?: Function;
 };
+
+export interface Response<T> {
+  body: string;
+  data: T;
+  headers: Record<string, string>;
+  requestUri: string;
+  statusCode: number;
+  statusText: string;
+}
+
+export interface RequestType extends Record<string, unknown> {
+  abort: () => void;
+}
