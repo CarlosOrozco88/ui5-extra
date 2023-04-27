@@ -1,0 +1,62 @@
+{
+  "name": "@carlosorozco/ui5Extra",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "CarlosOrozco88",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/CarlosOrozco88/ui5-extra#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosOrozco88/ui5-extra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CarlosOrozco88/ui5-extra/issues"
+  },
+  "scripts": {
+    "build": "run-s build:ts build:test-ts build:ui5",
+    "build:ts": "babel src --out-dir src-gen --extensions \".ts,.js\" --copy-files --include-dotfiles",
+    "build:test-ts": "babel test --out-dir test-gen --extensions \".ts,.js\" --copy-files --include-dotfiles",
+    "build:ui5": "ui5 build --clean-dest",
+    "watch": "run-p watch:controls watch:ts watch:test-ts start",
+    "watch:ts": "babel src --out-dir src-gen --extensions \".ts,.js\" --copy-files --include-dotfiles  --watch",
+    "watch:test-ts": "babel test --out-dir test-gen --extensions \".ts,.js\" --copy-files --include-dotfiles  --watch",
+    "watch:controls": "npx @ui5/ts-interface-generator --watch",
+    "start": "run-p watch:ts watch:test-ts start:ui5",
+    "start:ui5": "ui5 serve --open test-resources/dev/carlosorozco/ui5Extra/index.html",
+    "testsuite": "ui5 serve --open test-resources/dev/carlosorozco/ui5Extra/qunit/testsuite.qunit.html",
+    "test": "karma start --browsers=ChromeHeadless --singleRun=true",
+    "ts-typecheck": "tsc --noEmit",
+    "lint:src": "eslint src",
+    "lint:test": "eslint test",
+    "lint": "run-s lint:src lint:test"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.0",
+    "@babel/core": "7.21.4",
+    "@babel/preset-env": "7.21.4",
+    "@babel/preset-typescript": "7.21.4",
+    "@sapui5/ts-types-esm": "1.113.0",
+    "@types/openui5": "1.113.0",
+    "@typescript-eslint/eslint-plugin": "5.59.0",
+    "@typescript-eslint/parser": "5.59.0",
+    "@ui5/cli": "3.0.7",
+    "@ui5/ts-interface-generator": "0.5.5",
+    "babel-preset-transform-ui5": "7.1.4",
+    "eslint": "8.38.0",
+    "karma": "6.4.1",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-cli": "2.0.0",
+    "karma-ui5": "3.0.2",
+    "npm-run-all": "4.1.5",
+    "typescript": "5.0.4",
+    "ui5-middleware-livereload": "0.8.2",
+    "ui5-middleware-simpleproxy": "^0.9.6"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload",
+      "ui5-middleware-simpleproxy"
+    ]
+  }
+}

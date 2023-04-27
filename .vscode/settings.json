@@ -1,0 +1,15 @@
+{
+    "editor.guides.bracketPairs": true,
+    "files.eol": "\n",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.validate": ["typescript", "javascript"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "files.trimFinalNewlines": true,
+    "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.stickyScroll.enabled": true,
+}

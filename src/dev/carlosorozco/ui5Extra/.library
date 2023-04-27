@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+	<name>dev.carlosorozco.ui5Extra</name>
+	<vendor>carlosorozco</vendor>
+	<version>1.0.0</version>
+	<copyright>(c) 2021 ui5Extra contributors</copyright>
+	<title>ui5Extra</title>
+	<documentation>Some description about ui5Extra</documentation>
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+			<libraryName>sap.m</libraryName>
+		</dependency>
+	</dependencies>
+</library>
