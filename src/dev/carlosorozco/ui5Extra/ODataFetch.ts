@@ -34,7 +34,7 @@ export default class ODataFetch extends ODataModel {
     await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       this.abortRequest(sAborterId);
-      const oParams = this.resolver<ReadParameters>(mParameters, resolve, reject);
+      const oParams = this.resolver<ReadParameters>(mParameters, resolve, reject, sAborterId);
       const request = super.read(sPath, oParams) as RequestType;
       this.addRequest(request, sAborterId);
     });
@@ -45,7 +45,7 @@ export default class ODataFetch extends ODataModel {
     await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       this.abortRequest(sAborterId);
-      const oParams = this.resolver<CallFunctionParameters>(mParameters, resolve, reject);
+      const oParams = this.resolver<CallFunctionParameters>(mParameters, resolve, reject, sAborterId);
       const request = super.callFunction(sPath, oParams) as RequestType;
       this.addRequest(request, sAborterId);
     });
@@ -56,7 +56,7 @@ export default class ODataFetch extends ODataModel {
     await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       this.abortRequest(sAborterId);
-      const oParams = this.resolver<CreateParameters>(mParameters, resolve, reject);
+      const oParams = this.resolver<CreateParameters>(mParameters, resolve, reject, sAborterId);
       const request = super.create(sPath, oData, oParams) as RequestType;
       this.addRequest(request, sAborterId);
     });
@@ -67,7 +67,7 @@ export default class ODataFetch extends ODataModel {
     await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       this.abortRequest(sAborterId);
-      const oParams = this.resolver<UpdateRemoveParameters>(mParameters, resolve, reject);
+      const oParams = this.resolver<UpdateRemoveParameters>(mParameters, resolve, reject, sAborterId);
       const request = super.update(sPath, oData, oParams) as RequestType;
       this.addRequest(request, sAborterId);
     });
@@ -78,14 +78,14 @@ export default class ODataFetch extends ODataModel {
     await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       this.abortRequest(sAborterId);
-      const oParams = this.resolver<UpdateRemoveParameters>(mParameters, resolve, reject);
+      const oParams = this.resolver<UpdateRemoveParameters>(mParameters, resolve, reject, sAborterId);
       const request = super.remove(sPath, oParams) as RequestType;
       this.addRequest(request, sAborterId);
     });
     return oResponse as Promise<{ oData: undefined; oResponse: Response<undefined> }>;
   }
 
-  resolver<T>(mParameters: ResolverParams<T>, resolve: Function, reject: Function, sAborterId = '') {
+  resolver<T>(mParameters: ResolverParams<T>, resolve: Function, reject: Function, sAborterId: string) {
     const oParams: ResolverParams<T> = {
       ...mParameters,
       success: (oParamData: object, oResponse: Response<T>) => {
