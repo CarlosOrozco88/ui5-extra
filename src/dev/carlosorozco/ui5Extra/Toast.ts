@@ -1,28 +1,52 @@
 import { State as STATE } from './library';
 import Popup from './Popup';
+import { $PopupSettings } from './Popup';
 
 /**
+ * @class
+ * @static
+ * @public
  * @namespace dev.carlosorozco.ui5Extra
  */
-export default {
-  information(sMessage = '', mOptions = {}) {
+const Toast = {
+  /**
+   * @public
+   */
+  information(sMessage: string, mOptions?: $PopupSettings) {
     return this.show(sMessage, { ...mOptions, state: STATE.Information });
   },
-  success(sMessage = '', mOptions = {}) {
+
+  /**
+   * @public
+   */
+  success(sMessage: string, mOptions?: $PopupSettings) {
     return this.show(sMessage, { ...mOptions, state: STATE.Success });
   },
-  warning(sMessage = '', mOptions = {}) {
+
+  /**
+   * @public
+   */
+  warning(sMessage: string, mOptions?: $PopupSettings) {
     return this.show(sMessage, { ...mOptions, state: STATE.Warning });
   },
-  error(sMessage = '', mOptions = {}) {
+
+  /**
+   * @public
+   */
+  error(sMessage: string, mOptions?: $PopupSettings) {
     return this.show(sMessage, { ...mOptions, state: STATE.Error });
   },
 
-  show(sMessage = '', mOptions = {}) {
+  /**
+   * @public
+   */
+  show(sMessage: string, mOptions?: $PopupSettings) {
     const oPopup = new Popup({
       ...mOptions,
-      text: sMessage
+      text: sMessage ?? ''
     });
     return oPopup.show();
   }
 };
+
+export default Toast;

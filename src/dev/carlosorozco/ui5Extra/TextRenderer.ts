@@ -11,6 +11,9 @@ import ResourceBundle from 'sap/base/i18n/ResourceBundle';
 
 const oRb = Core.getLibraryResourceBundle('sap.m') as ResourceBundle;
 
+/**
+ * @private
+ */
 const TextRenderer = {
   apiVersion: 2,
 
@@ -158,4 +161,7 @@ const TextRenderer = {
   }
 };
 
+/**
+ * @private
+ */
 export default TextRenderer;

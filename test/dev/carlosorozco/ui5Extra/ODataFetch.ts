@@ -60,26 +60,35 @@ const oFetcher = new ODataFetch('/odata/V3/(S(3z2przqb440uhibfsibhrfhk))/OData/O
 function doActions() {
   doFunctionImport();
   doRead();
-  doCreate();
+  // doCreate();
+}
+
+let iBusy = 0;
+function setBusy(bBusy: boolean) {
+  const iDif = bBusy ? 1 : -1;
+  iBusy = iBusy + iDif;
+  if (iBusy < 0) iBusy = 0;
+  box.setBusy(iBusy > 0);
 }
 
 async function doRead() {
   try {
-    box.setBusy(true);
-    const response = await oFetcher.read('/Categories', undefined, 'getter');
+    setBusy(true);
+    const response = await oFetcher.read('/Categories', { aborterId: 'getter' });
     const { oData, oResponse } = response;
     oModel.setProperty('/read', oData);
 
     console.log('doRead success');
-    box.setBusy(false);
   } catch (error) {
     console.error('doRead error');
+  } finally {
+    setBusy(false);
   }
 }
 
 async function doFunctionImport() {
   try {
-    box.setBusy(true);
+    setBusy(true);
     const { oData, oResponse } = await oFetcher.callFunction('/GetProductsByRating', {
       urlParameters: {
         rating: 1
@@ -88,21 +97,23 @@ async function doFunctionImport() {
     oModel.setProperty('/callfunction', oData);
 
     console.log('doFunctionImport success');
-    box.setBusy(false);
   } catch (error) {
     console.error('doFunctionImport error');
+  } finally {
+    setBusy(false);
   }
 }
 
-async function doCreate() {
-  try {
-    box.setBusy(true);
-    const { oData, oResponse } = await oFetcher.create('/Products', { Name: 'Test' });
-    oModel.setProperty('/create', oData);
+// async function doCreate() {
+//   try {
+//     setBusy(true);
+//     const { oData, oResponse } = await oFetcher.create('/Products', { Name: 'Test' });
+//     oModel.setProperty('/create', oData);
 
-    console.log('doCreate success');
-    box.setBusy(false);
-  } catch (error) {
-    console.error('doCreate error');
-  }
-}
+//     console.log('doCreate success');
+//   } catch (error) {
+//     console.error('doCreate error');
+//   } finally {
+//     setBusy(false);
+//   }
+// }

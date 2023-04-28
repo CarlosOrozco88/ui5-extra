@@ -1,14 +1,24 @@
 import IconPool from 'sap/ui/core/IconPool';
 
 /**
- * @namespace dev.carlosorozco.ui5Extra.util.Icon
+ * @public
  */
-interface IconInfo {
+export interface IconInfo {
   fontFamily: string;
   content: string;
 }
-export default {
+
+/**
+ * @namespace dev.carlosorozco.ui5Extra.util.Icon
+ * @public
+ */
+const Icon = {
+  /**
+   * @public
+   */
   getIconInfo(iconName: string) {
     return IconPool.getIconInfo(iconName) as IconInfo;
   }
 };
+
+export default Icon;
