@@ -4,10 +4,6 @@ Libreria con controles extra para UI5
 
 > ❌ ¡Atención! La libreria está actualmente en desarrollo
 
-## Controles
+## Documentación
 
-```
-dev.carlosorozco.ui5Extra.Text
-dev.carlosorozco.ui5Extra.ODataFetch
-dev.carlosorozco.ui5Extra.Toast
-```
+- [API Link](https://carlosorozco88.github.io/ui5-extra/)
