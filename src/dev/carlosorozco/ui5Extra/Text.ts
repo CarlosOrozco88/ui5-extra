@@ -1,7 +1,7 @@
 // Provides control dev.carlosorozco.ui5Extra.Text
 import TextM from 'sap/m/Text';
 import TextRenderer from './TextRenderer';
-import CSS from './util/CSS';
+import Styles from './util/Styles';
 import Event from 'sap/ui/base/Event';
 import { support, system } from 'sap/ui/Device';
 
@@ -63,20 +63,20 @@ export default class Text extends TextM {
   static renderer = TextRenderer;
 
   setFontWeight(fontWeight: string) {
-    if (CSS.supports('font-weight', fontWeight)) {
+    if (Styles.supports('font-weight', fontWeight)) {
       this.setProperty('fontWeight', fontWeight);
     }
     return this;
   }
 
   setFontStyle(fontStyle: string) {
-    if (CSS.supports('font-style', fontStyle)) {
+    if (Styles.supports('font-style', fontStyle)) {
       this.setProperty('fontStyle', fontStyle);
     }
     return this;
   }
   setCursor(cursor: string) {
-    if (CSS.supports('cursor', cursor)) {
+    if (Styles.supports('cursor', cursor)) {
       this.setProperty('cursor', cursor);
     }
     return this;

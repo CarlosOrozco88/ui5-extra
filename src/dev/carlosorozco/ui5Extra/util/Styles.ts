@@ -4,7 +4,7 @@ import Log from 'sap/base/Log';
  * @namespace dev.carlosorozco.ui5Extra.util.CSSUtil
  * @public
  */
-const CSS = {
+const Styles = {
   supports(property: string, value: string) {
     if (!value || CSS.supports(property, value)) {
       return true;
@@ -14,4 +14,4 @@ const CSS = {
   }
 };
 
-export default CSS;
+export default Styles;
