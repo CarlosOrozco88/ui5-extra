@@ -46,7 +46,7 @@ export default class ODataFetch extends ODataModel {
       const request = super.read(sPath, oParams) as RequestType;
       this._addRequest(request, mParameters);
     });
-    return oResponse as Promise<{ oData: T; oResponse: Response<T> }>;
+    return oResponse as Promise<{ oData: T; oResponse: FetchResponse<T> }>;
   }
 
   /**
@@ -59,7 +59,7 @@ export default class ODataFetch extends ODataModel {
       const request = super.callFunction(sPath, oParams) as RequestType;
       this._addRequest(request, mParameters);
     });
-    return oResponse as Promise<{ oData: T; oResponse: Response<T> }>;
+    return oResponse as Promise<{ oData: T; oResponse: FetchResponse<T> }>;
   }
 
   /**
@@ -72,7 +72,7 @@ export default class ODataFetch extends ODataModel {
       const request = super.create(sPath, oData, oParams) as RequestType;
       this._addRequest(request, mParameters);
     });
-    return oResponse as Promise<{ oData: T; oResponse: Response<T> }>;
+    return oResponse as Promise<{ oData: T; oResponse: FetchResponse<T> }>;
   }
 
   /**
@@ -85,7 +85,7 @@ export default class ODataFetch extends ODataModel {
       const request = super.update(sPath, oData, oParams) as RequestType;
       this._addRequest(request, mParameters);
     });
-    return oResponse as Promise<{ oData: undefined; oResponse: Response<undefined> }>;
+    return oResponse as Promise<{ oData: undefined; oResponse: FetchResponse<undefined> }>;
   }
 
   /**
@@ -98,7 +98,7 @@ export default class ODataFetch extends ODataModel {
       const request = super.remove(sPath, oParams) as RequestType;
       this._addRequest(request, mParameters);
     });
-    return oResponse as Promise<{ oData: undefined; oResponse: Response<undefined> }>;
+    return oResponse as Promise<{ oData: undefined; oResponse: FetchResponse<undefined> }>;
   }
 
   /**
@@ -109,7 +109,7 @@ export default class ODataFetch extends ODataModel {
 
     const oParams: ResolverParams<T> = {
       ...mParameters,
-      success: (oParamData: object, oResponse: Response<T>) => {
+      success: (oParamData: object, oResponse: FetchResponse<T>) => {
         this._removeRequest(mParameters);
         const oData = mParameters?.success?.(deepClone(oParamData), deepClone(oResponse)) ?? oParamData;
         resolve({ oData, oResponse });
@@ -571,12 +571,18 @@ export interface UpdateRemoveParams extends AborterParams {
 /**
  * @public
  */
-export interface Response<T> {
+export interface FetchResponse<T> {
+  /** Response oData but stringified */
   body: string;
+  /** Response oData */
   data: T;
+  /** Response headers */
   headers: Record<string, string>;
+  /** Request uri */
   requestUri: string;
+  /** Status code */
   statusCode: number;
+  /** Status text */
   statusText: string;
 }
 

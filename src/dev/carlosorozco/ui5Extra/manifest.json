@@ -1,0 +1,31 @@
+{
+  "sap.app": {
+    "id": "dev.carlosorozco.ui5Extra",
+    "type": "library",
+    "applicationVersion": {
+      "version": "${version}"
+    },
+    "title": "An OpenUI5 library with extra controls"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.71.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  }
+}
