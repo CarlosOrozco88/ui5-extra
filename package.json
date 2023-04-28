@@ -22,6 +22,7 @@
     "watch:ts": "babel src --out-dir src-gen --extensions \".ts,.js\" --copy-files --include-dotfiles  --watch",
     "watch:test-ts": "babel test --out-dir test-gen --extensions \".ts,.js\" --copy-files --include-dotfiles  --watch",
     "watch:controls": "npx @ui5/ts-interface-generator --watch",
+    "watch:docs": "npm run docs --watch",
     "start": "run-p watch:ts watch:test-ts start:ui5",
     "start:ui5": "ui5 serve --open test-resources/dev/carlosorozco/ui5Extra/index.html",
     "testsuite": "ui5 serve --open test-resources/dev/carlosorozco/ui5Extra/qunit/testsuite.qunit.html",

@@ -13,9 +13,6 @@ export interface IconInfo {
  * @public
  */
 const Icon = {
-  /**
-   * @public
-   */
   getIconInfo(iconName: string) {
     return IconPool.getIconInfo(iconName) as IconInfo;
   }

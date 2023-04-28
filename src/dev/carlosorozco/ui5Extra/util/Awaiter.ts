@@ -3,9 +3,6 @@
  * @public
  */
 const Awaiter = {
-  /**
-   * @public
-   */
   wait(milliseconds: number): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -14,9 +11,6 @@ const Awaiter = {
     });
   },
 
-  /**
-   * @public
-   */
   tick() {
     return this.wait(0);
   }

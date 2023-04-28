@@ -19,14 +19,12 @@ import UpdateMethod from 'sap/ui/model/odata/UpdateMethod';
  */
 
 export default class ODataFetch extends ODataModel {
-  constructor(vServiceUrl: string | object, settings?: ODataFetchConstructorParams);
-  constructor(vServiceUrl: string | object, settings?: ODataFetchConstructorParams) {
+  constructor(vServiceUrl: string | object, settings?: $ODataFetchSettings);
+  constructor(vServiceUrl: string | object, settings?: $ODataFetchSettings) {
     super(vServiceUrl, settings);
   }
 
-  /**
-   * @private
-   */
+  /** @private */
   static readonly metadata: object = {
     library: 'dev.carlosorozco.ui5Extra'
   };
@@ -37,7 +35,14 @@ export default class ODataFetch extends ODataModel {
   static _requests = new Map<string, RequestType>();
 
   /**
-   * @public
+   * Trigger a `GET` request to the OData service that was specified in the model constructor.
+   *
+   * The data will be stored in the model. The requested data is returned with the response.
+   *
+   * @param sPath  An absolute path or a path relative to the context given in `mParameters.context`; if the path contains
+   * a query string, the query string is ignored, use `mParameters.urlParameters` instead
+   * @param mParameters Optional parameter map containing any of the following properties:
+   * @returns A promise resolving
    */
   async read<T>(sPath: string, mParameters?: ReadParams) {
     await this.metadataLoaded();
@@ -50,10 +55,17 @@ export default class ODataFetch extends ODataModel {
   }
 
   /**
-   * @public
+   * Triggers a request for the given function import.
+   *
+   * If the return type of the function import is either an entity type or a collection of an entity type,
+   * then this OData model's cache is updated with the values of the returned entities. Otherwise they are
+   * ignored, and the `response` can be processed in the `success` callback.
+   *
+   * @param sPath The name of the function import starting with a slash, for example `/Activate`.
+   * @param mParameters The parameter map containing any of the following properties:
+   * @returns A promise resolving
    */
   async callFunction<T>(sPath: string, mParameters?: CallFunctionParams) {
-    await this.metadataLoaded();
     const oResponse = await new Promise((resolve, reject) => {
       const oParams = this._resolver<CallFunctionParams>(mParameters ?? {}, resolve, reject);
       const request = super.callFunction(sPath, oParams) as RequestType;
@@ -63,7 +75,18 @@ export default class ODataFetch extends ODataModel {
   }
 
   /**
-   * @public
+   * Trigger a `POST` request to the OData service that was specified in the model constructor; see {@link
+   * topic:6c47b2b39db9404582994070ec3d57a2#loio4c4cd99af9b14e08bb72470cc7cabff4 Creating Entities documentation}
+   * for comprehensive information on the topic.
+   *
+   * **Note:** This function does not support a "deep create" scenario. Use {@link #createEntry} or {@link
+   * sap.ui.model.odata.v2.ODataListBinding#create} instead.
+   *
+   * @param sPath A string containing the path to the collection where an entry should be created. The path is concatenated
+   * to the service URL which was specified in the model constructor.
+   * @param oData Data of the entry that should be created.
+   * @param mParameters Optional parameter map containing any of the following properties:
+   * @returns A promise resolving
    */
   async create<T>(sPath: string, oData: object, mParameters?: CreateParams) {
     await this.metadataLoaded();
@@ -76,7 +99,11 @@ export default class ODataFetch extends ODataModel {
   }
 
   /**
-   * @public
+   * @param sPath A string containing the path to the data that should be updated. The path is concatenated to the sServiceUrl
+   * which was specified in the model constructor.
+   * @param oData Data of the entry that should be updated.
+   * @param mParameters Optional, can contain the following attributes:
+   * @returns A promise resolving
    */
   async update(sPath: string, oData: object, mParameters?: UpdateRemoveParams) {
     await this.metadataLoaded();
@@ -89,7 +116,11 @@ export default class ODataFetch extends ODataModel {
   }
 
   /**
-   * @public
+   * Trigger a `DELETE` request to the OData service that was specified in the model constructor.
+   *
+   * @param sPath A string containing the path to the data that should be removed. The path is concatenated to the service
+   * URL which was specified in the model constructor.
+   * @param mParameters, can contain the following attributes:
    */
   async remove(sPath: string, mParameters?: UpdateRemoveParams) {
     await this.metadataLoaded();
@@ -163,7 +194,7 @@ export default class ODataFetch extends ODataModel {
 /**
  * @public
  */
-export interface ODataFetchConstructorParams {
+export interface $ODataFetchSettings {
   /**
    * The URL (or an array of URLs) from which the annotation metadata should be loaded
    */
@@ -572,7 +603,7 @@ export interface UpdateRemoveParams extends AborterParams {
  * @public
  */
 export interface FetchResponse<T> {
-  /** Response oData but stringified */
+  /** Response oData but stringified  dsa */
   body: string;
   /** Response oData */
   data: T;

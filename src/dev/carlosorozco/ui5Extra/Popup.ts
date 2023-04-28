@@ -16,59 +16,67 @@ export default class Popup extends ManagedObject {
     super(id, settings);
   }
 
+  /** @private */
   static readonly metadata: object = {
     library: 'dev.carlosorozco.ui5Extra',
     properties: {
+      /** Title of the Popup */
       title: {
         type: 'string',
         group: 'Appearance',
         defaultValue: ''
       },
+      /** Message of the Popup */
       text: {
         type: 'string',
         group: 'Appearance',
         defaultValue: ''
       },
+      /** Max lines for message */
       maxLines: {
         type: 'int',
         group: 'Appearance',
         defaultValue: 3
       },
+      /** Popup duration in milliseconds */
       duration: {
         type: 'int',
         group: 'Appearance',
         defaultValue: 3000
       },
+      /** State of the Popup. Changes the colors */
       state: {
         type: 'dev.carlosorozco.ui5Extra.State',
         group: 'Misc',
         defaultValue: State.None
       },
+      /** Show or not the loader bar */
       showLoader: {
         type: 'boolean',
         group: 'Appearance',
         defaultValue: true
       },
+      /** Show or not the close button. If duration is 0, this property has no effect */
       showClose: {
         type: 'boolean',
         group: 'Appearance',
         defaultValue: true
       },
+      /** Icon of the Popup */
       icon: { type: 'sap.ui.core.URI', group: 'Data', defaultValue: null },
-      iconClose: { type: 'sap.ui.core.URI', group: 'Data', defaultValue: 'sap-icon://decline' },
-      y: {
-        type: 'int',
-        group: 'Appearance',
-        defaultValue: 0
-      }
+      /** State of the close button */
+      iconClose: { type: 'sap.ui.core.URI', group: 'Data', defaultValue: 'sap-icon://decline' }
     },
     events: {
       onClose: {}
     }
   };
 
+  /** @private */
   oContent?: HTMLLIElement;
+  /** @private */
   resolver?: (value?: unknown) => unknown;
+  /** @private */
   _closeTimeout?: ReturnType<typeof setTimeout>;
 
   async show() {

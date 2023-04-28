@@ -19,6 +19,7 @@ export default class Text extends TextM {
     super(id, settings);
   }
 
+  /** @private */
   static readonly metadata: object = {
     library: 'dev.carlosorozco.ui5Extra',
     properties: {
@@ -58,6 +59,7 @@ export default class Text extends TextM {
     }
   };
 
+  /** @private */
   static renderer = TextRenderer;
 
   setFontWeight(fontWeight: string) {

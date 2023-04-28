@@ -19,7 +19,6 @@ declare module "./Popup" {
         showClose?: boolean | PropertyBindingInfo | `{${string}}`;
         icon?: URI | PropertyBindingInfo | `{${string}}`;
         iconClose?: URI | PropertyBindingInfo | `{${string}}`;
-        y?: number | PropertyBindingInfo | `{${string}}`;
         onClose?: (event: Event) => void;
     }
 
@@ -60,10 +59,6 @@ declare module "./Popup" {
         // property: iconClose
         getIconClose(): URI;
         setIconClose(iconClose: URI): this;
-
-        // property: y
-        getY(): number;
-        setY(y: number): this;
 
         // event: onClose
         attachOnClose(fn: (event: Event) => void, listener?: object): this;

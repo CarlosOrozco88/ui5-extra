@@ -4,5 +4,6 @@
   "out": "docs",
   "excludeExternals": true,
   "excludePrivate": true,
-  "excludeNotDocumented": true
+  "excludeNotDocumented": true,
+  "excludeNotDocumentedKinds": ["Module"]
 }

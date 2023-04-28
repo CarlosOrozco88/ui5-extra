@@ -5,9 +5,6 @@ import Log from 'sap/base/Log';
  * @public
  */
 const CSS = {
-  /**
-   * @public
-   */
   supports(property: string, value: string) {
     if (!value || CSS.supports(property, value)) {
       return true;
