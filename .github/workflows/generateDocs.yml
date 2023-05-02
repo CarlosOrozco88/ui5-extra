@@ -15,8 +15,14 @@ jobs:
 
       - name: Install Typedoc and build docs
         run: |
-          npm i typedoc
+          npm i
           npm run docs
+
+      - name: Build UI5 App Samples
+        working-directory: ./app
+        run: |
+          npm i
+          npm run build:opt
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
