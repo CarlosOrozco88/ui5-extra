@@ -1,0 +1,32 @@
+{
+  "name": "ui5-typescript-helloworld",
+  "version": "1.0.0",
+  "description": "Showcase of a TypeScript setup for developing UI5 applications",
+  "author": "SAP SE",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "ui5 build --clean-dest",
+    "build:opt": "ui5 build self-contained --dest ../docs/app --clean-dest --all",
+    "start": "ui5 serve --port 8080 -o index.html",
+    "start:dist": "ui5 serve  --port 8080 -o index.html --config ui5-dist.yaml",
+    "ts-typecheck": "tsc --noEmit",
+    "lint": "eslint webapp"
+  },
+  "ui5": {
+    "dependencies": [
+      "@carlosorozco/ui5Extra"
+    ]
+  },
+  "devDependencies": {
+    "@carlosorozco/ui5Extra": "../",
+    "@types/openui5": "1.113.0",
+    "@typescript-eslint/eslint-plugin": "5.59.2",
+    "@typescript-eslint/parser": "5.59.2",
+    "@ui5/cli": "3.1.1",
+    "eslint": "8.39.0",
+    "typescript": "5.0.4",
+    "ui5-middleware-livereload": "0.8.2",
+    "ui5-middleware-simpleproxy": "0.9.6",
+    "ui5-tooling-transpile": "0.7.8"
+  }
+}
