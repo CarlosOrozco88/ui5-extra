@@ -28,6 +28,7 @@ UI5 lib with extra controls
 # Docs
 
 - [Docs Link](https://carlosorozco88.github.io/ui5-extra/)
+- [Samples Link](https://carlosorozco88.github.io/ui5-extra/app/)
 
 # Links
 
