@@ -1,5 +1,7 @@
 @import 'vars.less';
 
+@SHOW_DURATION: 250ms;
+
 .Notifications {
   width: 100vw;
   box-sizing: border-box;
@@ -20,13 +22,10 @@
 .Popup {
   pointer-events: all;
   width: auto;
-  height: 0px;
   max-width: 100%;
   transition: 0.25s ease all;
   border-radius: 0.275rem;
   color: black;
-  padding: 0 0.75rem;
-  margin: 0 1rem 0 0;
   display: grid;
   grid-template-columns: minmax(10rem, 1fr);
   grid-template-rows: 1fr;
@@ -41,10 +40,12 @@
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   border-left: 0.275rem solid @state-none-color;
   overflow: hidden;
+
   transform: scale(0);
   opacity: 0;
-
-  transition: all ease 0.25s, margin padding height ease 0.25s;
+  padding: 0 0.75rem;
+  height: 0px;
+  margin: 0 1rem 0 0;
 
   &:hover {
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
@@ -140,9 +141,9 @@
       width: 0%;
       height: 100%;
       background-color: @state-none-color;
-      transition-property: width;
-      transition-timing-function: linear;
-      transition-delay: 250ms;
+      animation-name: loadBar;
+      animation-timing-function: linear;
+      animation-delay: @SHOW_DURATION;
     }
   }
 
@@ -167,26 +168,64 @@
   }
 
   &.show {
+    animation-name: showPopup;
+    animation-timing-function: ease;
+    animation-duration: @SHOW_DURATION;
+    animation-fill-mode: forwards;
+  }
+  &.hide {
+    animation-name: hidePopup;
+    animation-timing-function: ease;
+    animation-duration: @SHOW_DURATION;
+    animation-fill-mode: forwards;
+
+    .Progress {
+      .Loader {
+        animation: unset;
+        animation-duration: 0 !important;
+      }
+    }
+  }
+}
+
+@keyframes loadBar {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes showPopup {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    padding: 0 0.75rem;
+    height: 0px;
+    margin: 0 1rem 0 0;
+  }
+  to {
     transform: scale(1);
     opacity: 1;
     padding: 0.75rem;
     height: auto;
     margin: 0 1rem 1rem 0;
-
-    .Progress {
-      .Loader {
-        width: 100%;
-      }
-    }
   }
+}
 
-  &.hide {
-    .Progress {
-      .Loader {
-        transition-duration: 50ms !important;
-        transition-delay: 0ms;
-        width: 99.99%;
-      }
-    }
+@keyframes hidePopup {
+  from {
+    transform: scale(1);
+    opacity: 1;
+    padding: 0.75rem;
+    height: auto;
+    margin: 0 1rem 1rem 0;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+    padding: 0 0.75rem;
+    height: 0px;
+    margin: 0 1rem 0 0;
   }
 }

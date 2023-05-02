@@ -1,4 +1,5 @@
 import ODataFetch from 'dev/carlosorozco/ui5Extra/ODataFetch';
+import Toast from 'dev/carlosorozco/ui5Extra/Toast';
 import Button from 'sap/m/Button';
 import HBox from 'sap/m/HBox';
 import List from 'sap/m/List';
@@ -74,13 +75,14 @@ function setBusy(bBusy: boolean) {
 async function doRead() {
   try {
     setBusy(true);
-    const response = await oFetcher.read('/Categories', { aborterId: 'getter' });
+    const response = await oFetcher.read('/Categories', { aborterId: 'read' });
     const { oData, oResponse } = response;
     oModel.setProperty('/read', oData);
 
-    console.log('doRead success');
-  } catch (error) {
-    console.error('doRead error');
+    Toast.success('Read success');
+  } catch (error: any) {
+    // eslint-disable-next-line
+    Toast.error(error.message);
   } finally {
     setBusy(false);
   }
@@ -90,15 +92,17 @@ async function doFunctionImport() {
   try {
     setBusy(true);
     const { oData, oResponse } = await oFetcher.callFunction('/GetProductsByRating', {
+      aborterId: 'callFunction',
       urlParameters: {
         rating: 1
       }
     });
     oModel.setProperty('/callfunction', oData);
 
-    console.log('doFunctionImport success');
-  } catch (error) {
-    console.error('doFunctionImport error');
+    Toast.success('CallFunction success');
+  } catch (error: any) {
+    // eslint-disable-next-line
+    Toast.error(error.message);
   } finally {
     setBusy(false);
   }

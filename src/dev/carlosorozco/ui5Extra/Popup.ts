@@ -20,19 +20,19 @@ export default class Popup extends ManagedObject {
   static readonly metadata: object = {
     library: 'dev.carlosorozco.ui5Extra',
     properties: {
-      /** Title of the Popup */
+      /** Title for the Popup */
       title: {
         type: 'string',
         group: 'Appearance',
         defaultValue: ''
       },
-      /** Message of the Popup */
+      /** Message for the Popup */
       text: {
         type: 'string',
         group: 'Appearance',
         defaultValue: ''
       },
-      /** Max lines for message */
+      /** Max lines for message (integer) */
       maxLines: {
         type: 'int',
         group: 'Appearance',
@@ -44,7 +44,7 @@ export default class Popup extends ManagedObject {
         group: 'Appearance',
         defaultValue: 3000
       },
-      /** State of the Popup. Changes the colors */
+      /** State of the Popup. Changes the color and icon */
       state: {
         type: 'dev.carlosorozco.ui5Extra.State',
         group: 'Misc',
@@ -62,9 +62,9 @@ export default class Popup extends ManagedObject {
         group: 'Appearance',
         defaultValue: true
       },
-      /** Icon of the Popup */
+      /** Icon for the Popup. It overwrites the State icon */
       icon: { type: 'sap.ui.core.URI', group: 'Data', defaultValue: null },
-      /** State of the close button */
+      /** Icon for the close button */
       iconClose: { type: 'sap.ui.core.URI', group: 'Data', defaultValue: 'sap-icon://decline' }
     },
     events: {
@@ -74,8 +74,10 @@ export default class Popup extends ManagedObject {
 
   /** @private */
   oContent?: HTMLLIElement;
+
   /** @private */
   resolver?: (value?: unknown) => unknown;
+
   /** @private */
   _closeTimeout?: ReturnType<typeof setTimeout>;
 
@@ -83,11 +85,11 @@ export default class Popup extends ManagedObject {
     const oPopup = this.createPopup();
     this.setContent(oPopup);
 
-    const oStaticArea = this.createStaticArea();
+    const oULArea = this.createULArea();
 
-    const oDom = this.getDom();
-    if (!oDom) throw Error('No static area created');
-    oDom.appendTo(oStaticArea);
+    const oContent = this.getContent();
+    if (!oContent) throw Error('No static area created');
+    oULArea.append(oContent);
 
     await Awaiter.tick();
     oPopup.classList.add('show');
@@ -112,7 +114,6 @@ export default class Popup extends ManagedObject {
     if (!oPopup) return;
 
     oPopup.classList.add('hide');
-    await Awaiter.wait(50);
     oPopup.classList.remove('show');
     await Awaiter.wait(250);
 
@@ -124,6 +125,8 @@ export default class Popup extends ManagedObject {
     clearTimeout(this._closeTimeout);
     oPopup.remove();
     this.destroy(true);
+
+    this.cleanULArea();
   }
 
   createPopup() {
@@ -219,7 +222,7 @@ export default class Popup extends ManagedObject {
 
       const oLoader = document.createElement('div');
       oLoader.classList.add('Loader');
-      oLoader.style.transitionDuration = `${loaderDuration}ms`;
+      oLoader.style.animationDuration = `${loaderDuration}ms`;
       oProgress.append(oLoader);
     }
     return oProgress;
@@ -258,16 +261,7 @@ export default class Popup extends ManagedObject {
     return this.oContent;
   }
 
-  getDom() {
-    let $ContentRef;
-    if (this.oContent) {
-      $ContentRef = jQuery(this.oContent);
-    }
-
-    return $ContentRef;
-  }
-
-  createStaticArea() {
+  createULArea() {
     const oGlobalStatic = sap.ui.getCore().getStaticAreaRef();
 
     let oNotifications = document.getElementById(NOTIFICATIONS_ID);
@@ -279,6 +273,13 @@ export default class Popup extends ManagedObject {
       oGlobalStatic.append(oNotifications);
     }
     return oNotifications;
+  }
+
+  cleanULArea() {
+    const oNotifications = document.getElementById(NOTIFICATIONS_ID);
+    if (oNotifications && !oNotifications.hasChildNodes()) {
+      oNotifications.remove();
+    }
   }
 
   setDuration(duration: number) {

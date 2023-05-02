@@ -49,6 +49,6 @@ new Button({
 new Button({
   text: 'Infinite',
   press: () => {
-    Toast.show('Infinite', { showIcon: false, showClose: false, duration: 1 });
+    Toast.show('Infinite', { showClose: false, duration: 1 });
   }
 }).placeAt('content');
