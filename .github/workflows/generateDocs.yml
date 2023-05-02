@@ -18,6 +18,10 @@ jobs:
           npm i
           npm run docs
 
+      - name: Build library
+        run: |
+          npm run build
+
       - name: Build UI5 App Samples
         working-directory: ./app
         run: |
