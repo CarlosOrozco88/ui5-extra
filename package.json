@@ -15,7 +15,8 @@
     "packages/*"
   ],
   "scripts": {
-    "commit": "sui-mono commit"
+    "commit": "sui-mono commit",
+    "check": "sui-mono check"
   },
   "devDependencies": {
     "@s-ui/mono": "2.34.0"

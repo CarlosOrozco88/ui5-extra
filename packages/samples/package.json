@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "build": "ui5 build --clean-dest",
-    "build:opt": "ui5 build self-contained --dest ../docs/app --clean-dest --all",
+    "build:opt": "ui5 build self-contained --dest ../../docs/app --clean-dest --all",
     "start": "ui5 serve --port 8080 -o index.html",
     "start:dist": "ui5 serve  --port 8080 -o index.html --config ui5-dist.yaml",
     "ts-typecheck": "tsc --noEmit",
