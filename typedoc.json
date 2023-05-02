@@ -1,6 +1,6 @@
 {
   "entryPointStrategy": "expand",
-  "entryPoints": ["./src/"],
+  "entryPoints": ["./types"],
   "out": "docs",
   "excludeExternals": true,
   "excludePrivate": true,

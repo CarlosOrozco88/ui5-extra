@@ -33,6 +33,7 @@
     "lint": "run-s lint:src lint:test",
     "docs": "typedoc --options typedoc.json"
   },
+  "types": "types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "7.21.0",
     "@babel/core": "7.21.4",

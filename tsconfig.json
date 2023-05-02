@@ -17,5 +17,5 @@
       "dev/carlosorozco/ui5Extra/*": ["./src/dev/carlosorozco/ui5Extra/*"]
     }
   },
-  "include": ["./src/**/*", "./test/**/*"]
+  "include": ["./src/**/*", "./test/**/*", "./types/**/*"]
 }
