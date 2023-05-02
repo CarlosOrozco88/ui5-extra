@@ -1,0 +1,1 @@
+{"version":3,"file":"Icon.js","names":["sap","ui","define","IconPool","Icon","getIconInfo","iconName"],"sources":["Icon-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,CAAC,wBAAyB,SAAUC,GAShD,MAAMC,EAAO,CACXC,YAAYC,GACV,OAAOH,EAASE,YAAYC,EAC9B,GAEF,OAAOF,CACT"}

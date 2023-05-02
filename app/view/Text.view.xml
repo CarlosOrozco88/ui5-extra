@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="ui5.typescript.helloworld.controller.Text"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:ui5Extra="dev.carlosorozco.ui5Extra">
+
+	<semantic:SemanticPage>
+		<semantic:titleHeading>
+			<Title
+				text="dev.carlosorozco.ui5Extra.Text"
+				level="H2"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectAttribute title="module" text="dev/carlosorozco/ui5Extra/Text"/>
+		</semantic:headerContent>
+		<semantic:content>
+            <VBox>
+                <ui5Extra:Text text="Default" />
+                <ui5Extra:Text text="Color red" color="red" />
+                <ui5Extra:Text text="Background yellow" backgroundColor="yellow" />
+                <ui5Extra:Text text="Font size 2rem" fontSize="2rem" />
+                <ui5Extra:Text text="Font weight" fontWeight="bold" />
+                <ui5Extra:Text text="Font style" fontStyle="italic" />
+                <ui5Extra:Text text="Cursor pointer" cursor="pointer" />
+                <ui5Extra:Text text="Press me" press="pressText" />
+            </VBox>
+		</semantic:content>
+
+	</semantic:SemanticPage>
+
+</mvc:View>

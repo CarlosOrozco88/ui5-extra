@@ -1,0 +1,1 @@
+{"version":3,"file":"Awaiter.js","names":["sap","ui","define","Awaiter","wait","milliseconds","Promise","resolve","setTimeout","tick","this"],"sources":["Awaiter-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,GAAI,WAKhB,MAAMC,EAAU,CACdC,KAAKC,GACH,OAAO,IAAIC,QAAQC,IACjBC,WAAW,KACTD,GAAS,EACRF,GAAgB,EAAE,EAEzB,EACAI,OACE,OAAOC,KAAKN,KAAK,EACnB,GAEF,OAAOD,CACT"}

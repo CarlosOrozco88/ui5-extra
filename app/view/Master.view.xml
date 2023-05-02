@@ -1,0 +1,24 @@
+<mvc:View
+	controllerName="ui5.typescript.helloworld.controller.Master"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<Page title="Modules List" class="sapUiContentPadding">
+        <List
+            class="sapFDynamicPageAlignContent"
+            items="{/Controls}"
+            mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+            growing="true"
+            growingScrollToLoad="true"
+            selectionChange=".onSelectionChange">
+            <items>
+                <StandardListItem
+                    type="Navigation"
+                    press=".onSelectionChange"
+                    title="{Name}">
+                </StandardListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>

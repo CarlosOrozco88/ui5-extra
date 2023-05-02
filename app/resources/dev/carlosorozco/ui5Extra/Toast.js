@@ -1,0 +1,2 @@
+sap.ui.define(["./library","./Popup"],function(t,n){function e(t){return t&&t.__esModule&&typeof t.default!=="undefined"?t.default:t}const r=t["State"];const s=e(n);const o={information(t,n){return this.show(t,{...n,state:r.Information})},success(t,n){return this.show(t,{...n,state:r.Success})},warning(t,n){return this.show(t,{...n,state:r.Warning})},error(t,n){return this.show(t,{...n,state:r.Error})},show(t,n){const e=new s({...n,text:t??""});return e.show()}};return o});
+//# sourceMappingURL=Toast.js.map
