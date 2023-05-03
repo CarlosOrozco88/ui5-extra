@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false
+  }
+}

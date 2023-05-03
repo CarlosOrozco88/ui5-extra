@@ -1,4 +1,7 @@
 {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true,
     "es6": true,
@@ -9,12 +12,10 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json"],
+    "project": ["./tsconfig.json", "./packages/*/tsconfig.json"],
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",

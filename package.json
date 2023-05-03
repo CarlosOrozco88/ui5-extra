@@ -1,5 +1,5 @@
 {
-  "name": "ui5-extra",
+  "name": "ui5-extra-monorepo",
   "author": "CarlosOrozco88",
   "license": "Apache-2.0",
   "homepage": "https://github.com/CarlosOrozco88/ui5-extra#README",
@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/CarlosOrozco88/ui5-extra/issues"
   },
-  "types": "types/index.d.ts",
   "workspaces": [
     "packages/*"
   ],
