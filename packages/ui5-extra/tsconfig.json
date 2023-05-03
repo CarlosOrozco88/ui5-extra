@@ -8,5 +8,5 @@
       "dev/carlosorozco/ui5Extra/*": ["./src/dev/carlosorozco/ui5Extra/*"]
     }
   },
-  "include": ["src", "types"]
+  "include": ["src", "test", "types"]
 }
