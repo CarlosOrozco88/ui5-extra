@@ -5,8 +5,8 @@
     "id": "dev.carlosorozco.ui5Extra.samples",
     "type": "application",
     "i18n": "i18n/i18n.properties",
-    "title": "UI5 TypeScript Hello World",
-    "description": "UI5 TypeScript Hello World",
+    "title": "ui5-extra Samples | Carlos Orozco",
+    "description": "ui5-extra Samples | Carlos Orozco",
     "applicationVersion": {
       "version": "1.0.0"
     },
