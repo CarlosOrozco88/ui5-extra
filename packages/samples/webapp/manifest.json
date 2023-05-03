@@ -2,7 +2,7 @@
   "_version": "1.12.0",
 
   "sap.app": {
-    "id": "ui5.typescript.helloworld",
+    "id": "dev.carlosorozco.ui5Extra.samples",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "title": "UI5 TypeScript Hello World",
@@ -27,7 +27,7 @@
 
   "sap.ui5": {
     "rootView": {
-      "viewName": "ui5.typescript.helloworld.view.App",
+      "viewName": "dev.carlosorozco.ui5Extra.samples.view.App",
       "type": "XML",
       "async": true,
       "id": "app"
@@ -56,7 +56,7 @@
       "config": {
         "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
-        "viewPath": "ui5.typescript.helloworld.view",
+        "viewPath": "dev.carlosorozco.ui5Extra.samples.view",
         "controlId": "layout",
         "controlAggregation": "beginColumnPages",
         "async": true

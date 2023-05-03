@@ -1,19 +1,12 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2022",
-    "module": "es2022",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "allowJs": true,
-    "checkJs": false,
-    "strict": true,
-    "strictPropertyInitialization": false,
     "rootDir": "./webapp",
     "baseUrl": "./",
     "paths": {
-      "ui5/typescript/helloworld/*": ["./webapp/*"]
+      "dev/carlosorozco/ui5Extra/samples/*": ["./webapp/*"]
     },
-    "typeRoots": ["node_modules/@types", "node_modules/@carlosorozco"]
+    "typeRoots": ["../../node_modules/@types", "../../node_modules/@carlosorozco/ui5-extra"]
   },
   "include": ["./webapp/**/*"]
 }

@@ -7,7 +7,7 @@ import Component from '../Component';
 import ListItemBase from 'sap/m/ListItemBase';
 
 /**
- * @namespace ui5.typescript.helloworld.controller
+ * @namespace dev.carlosorozco.ui5Extra.samples.controller
  */
 export default class Master extends Controller {
   public onInit(): void {
