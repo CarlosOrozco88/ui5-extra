@@ -3,9 +3,9 @@
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device"], function (UIComponent, sap_ui_Device) {
   const support = sap_ui_Device["support"];
   /**
-   * @namespace ui5.typescript.helloworld
+   * @namespace dev.carlosorozco.ui5Extra.samples
    */
-  const Component = UIComponent.extend("ui5.typescript.helloworld.Component", {
+  const Component = UIComponent.extend("dev.carlosorozco.ui5Extra.samples.Component", {
     metadata: {
       manifest: 'json'
     },

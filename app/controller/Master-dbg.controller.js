@@ -3,9 +3,9 @@
 sap.ui.define(["sap/ui/Device", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (sap_ui_Device, Controller, JSONModel) {
   const system = sap_ui_Device["system"];
   /**
-   * @namespace ui5.typescript.helloworld.controller
+   * @namespace dev.carlosorozco.ui5Extra.samples.controller
    */
-  const Master = Controller.extend("ui5.typescript.helloworld.controller.Master", {
+  const Master = Controller.extend("dev.carlosorozco.ui5Extra.samples.controller.Master", {
     onInit: function _onInit() {
       const oModel = new JSONModel({
         Controls: ['Text', 'Toast', 'ODataFetch'].map(controlName => {

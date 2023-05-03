@@ -1,2 +1,2 @@
-"use strict";sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){const t=e.extend("ui5.typescript.helloworld.controller.ODataFetchView",{});return t});
+"use strict";sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){const o=e.extend("dev.carlosorozco.ui5Extra.samples.controller.ODataFetchView",{});return o});
 //# sourceMappingURL=ODataFetch.controller.js.map

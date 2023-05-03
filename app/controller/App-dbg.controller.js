@@ -2,11 +2,10 @@
 
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   /**
-   * @namespace ui5.typescript.helloworld.controller
+   * @namespace dev.carlosorozco.ui5Extra.samples.controller
    */
-  const App = Controller.extend("ui5.typescript.helloworld.controller.App", {
+  const App = Controller.extend("dev.carlosorozco.ui5Extra.samples.controller.App", {
     onInit: function _onInit() {
-      debugger;
       const view = this.getView();
       if (view) {
         view.addStyleClass(this.getOwnerComponent().getContentDensityClass());

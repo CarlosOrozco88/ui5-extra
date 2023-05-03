@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="ui5.typescript.helloworld.controller.ODataFetch"
+	controllerName="dev.carlosorozco.ui5Extra.samples.controller.ODataFetch"
 	xmlns="sap.m"
 	xmlns:semantic="sap.f.semantic"
 	xmlns:mvc="sap.ui.core.mvc">

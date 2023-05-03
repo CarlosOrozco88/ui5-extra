@@ -2,8 +2,8 @@
 
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   /**
-   * @namespace ui5.typescript.helloworld.controller
+   * @namespace dev.carlosorozco.ui5Extra.samples.controller
    */
-  const ODataFetchView = Controller.extend("ui5.typescript.helloworld.controller.ODataFetchView", {});
+  const ODataFetchView = Controller.extend("dev.carlosorozco.ui5Extra.samples.controller.ODataFetchView", {});
   return ODataFetchView;
 });

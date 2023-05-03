@@ -6,9 +6,9 @@ sap.ui.define(["dev/carlosorozco/ui5Extra/Toast", "sap/ui/core/mvc/Controller"],
   }
   const Toast = _interopRequireDefault(__Toast);
   /**
-   * @namespace ui5.typescript.helloworld.controller
+   * @namespace dev.carlosorozco.ui5Extra.samples.controller
    */
-  const TextView = Controller.extend("ui5.typescript.helloworld.controller.TextView", {
+  const TextView = Controller.extend("dev.carlosorozco.ui5Extra.samples.controller.TextView", {
     pressText: function _pressText() {
       Toast.success('Pressed', {
         title: 'Success'
