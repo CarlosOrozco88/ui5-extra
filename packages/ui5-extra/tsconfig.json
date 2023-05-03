@@ -1,15 +1,6 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "preserveConstEnums": true,
-    "sourceMap": false,
-    "allowJs": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "rootDir": "./",
     "outDir": "./src-gen",
     "baseUrl": "./",
@@ -17,5 +8,5 @@
       "dev/carlosorozco/ui5Extra/*": ["./src/dev/carlosorozco/ui5Extra/*"]
     }
   },
-  "include": ["./src/**/*", "./test/**/*", "./types/**/*"]
+  "include": ["src", "types"]
 }

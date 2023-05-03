@@ -1,6 +1,11 @@
 declare module 'dev/carlosorozco/ui5Extra/ODataFetch' {
   import ODataModel from 'sap/ui/model/odata/v2/ODataModel';
-
+  import BindingMode from 'sap/ui/model/BindingMode';
+  import Filter from 'sap/ui/model/Filter';
+  import Sorter from 'sap/ui/model/Sorter';
+  import CountMode from 'sap/ui/model/odata/CountMode';
+  import OperationMode from 'sap/ui/model/odata/OperationMode';
+  import UpdateMethod from 'sap/ui/model/odata/UpdateMethod';
   /**
    * @class
    * Constructor for a new <code>dev.carlosorozco.ui5Extra.ODataFetch</code> control.
