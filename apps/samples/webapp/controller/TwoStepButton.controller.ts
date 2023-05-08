@@ -1,10 +1,10 @@
-import Controller from 'sap/ui/core/mvc/Controller';
 import Toast from 'ui5Extra/Toast/Toast';
+import BaseController from './BaseController';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples.controller
  */
-export default class TwoStepButtonView extends Controller {
+export default class TwoStepButtonView extends BaseController {
   pressInitial() {
     console.log('Step 1/2');
   }

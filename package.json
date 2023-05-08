@@ -13,8 +13,8 @@
   },
   "workspaces": [
     "apps/*",
-    "libraries/*",
-    "packages/*"
+    "packages/*",
+    "libraries/*"
   ],
   "scripts": {
     "cm": "sui-mono commit",

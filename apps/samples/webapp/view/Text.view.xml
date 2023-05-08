@@ -16,6 +16,11 @@
             <ObjectAttribute
                 title="module"
                 text="ui5Extra/Text/Text" />
+            <ObjectAttribute
+                title="API reference"
+                text="ui5Extra.Text.Text"
+                active="true"
+                press="openWebsite('./api/text')" />
         </semantic:headerContent>
         <semantic:content>
             <layout:Grid>

@@ -28,11 +28,7 @@
                     emphasized="true"
                     href="./"
                     class="title" />
-                <ToolbarSeparator class="sapUiSmallMarginBeginEnd" />
-                <Link
-                    text="Api Reference"
-                    emphasized="true"
-                    href="https://carlosorozco88.github.io/ui5-extra/" />
+
                 <ToolbarSpacer />
                 <Button
                     icon="sap-icon://source-code"

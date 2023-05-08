@@ -16,6 +16,11 @@
             <ObjectAttribute
                 title="module"
                 text="ui5Extra/TwoStepButton/TwoStepButton" />
+            <ObjectAttribute
+                title="API reference"
+                text="ui5Extra.TwoStepButton.TwoStepButton"
+                active="true"
+                press="openWebsite('./api/twostepbutton')" />
         </semantic:headerContent>
         <semantic:content>
             <layout:Grid>

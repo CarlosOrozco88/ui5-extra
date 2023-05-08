@@ -15,6 +15,11 @@
             <ObjectAttribute
                 title="module"
                 text="ui5Extra/Toast/Toast" />
+            <ObjectAttribute
+                title="API reference"
+                text="ui5Extra.Toast.Toast"
+                active="true"
+                press="openWebsite('./api/toast')" />
         </semantic:headerContent>
         <semantic:content>
             <layout:Grid>

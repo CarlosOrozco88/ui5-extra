@@ -1,14 +1,14 @@
 import List from 'sap/m/List';
 import { system } from 'sap/ui/Device';
 import Event from 'sap/ui/base/Event';
-import Controller from 'sap/ui/core/mvc/Controller';
 import Component from '../Component';
 import ListItemBase from 'sap/m/ListItemBase';
+import BaseController from './BaseController';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples.controller
  */
-export default class Master extends Controller {
+export default class Master extends BaseController {
   onSelectionChange(oEvent: Event) {
     const oList = oEvent.getSource() as List;
     const bSelected = oEvent.getParameter('selected');

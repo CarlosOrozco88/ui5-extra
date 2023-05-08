@@ -5,7 +5,7 @@ type: application
 resources:
   configuration:
     paths:
-      webapp: dist
+      webapp: ../../docs
 framework:
   name: OpenUI5
   version: '1.112.0'
@@ -13,5 +13,4 @@ framework:
     - name: sap.m
     - name: sap.f
     - name: sap.ui.core
-    - name: sap.ui.unified
     - name: themelib_sap_horizon

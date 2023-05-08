@@ -38,7 +38,6 @@
       "libs": {
         "sap.ui.core": {},
         "sap.ui.layout": {},
-        "sap.ui.unified": {},
         "sap.m": {},
         "ui5Extra.ODataFetch": {},
         "ui5Extra.Text": {},
@@ -46,8 +45,8 @@
         "ui5Extra.TwoStepButton": {}
       }
     },
-
     "resources": {
+      "js": [{ "uri": "controller/BaseController.js" }],
       "css": [{ "uri": "css/styles.css" }]
     },
     "handleValidation": true,
@@ -67,7 +66,7 @@
 
     "routing": {
       "config": {
-        "routerClass": "sap.f.routing.Router",
+        "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "viewPath": "dev.carlosorozco.ui5Extra.samples.view",
         "controlId": "app",
@@ -81,22 +80,22 @@
           "target": ["master", "main"]
         },
         {
-          "pattern": "control/ODataFetch",
+          "pattern": "ODataFetch",
           "name": "ODataFetch",
           "target": ["master", "odatafetch"]
         },
         {
-          "pattern": "control/Text",
+          "pattern": "Text",
           "name": "Text",
           "target": ["master", "text"]
         },
         {
-          "pattern": "control/Toast",
+          "pattern": "Toast",
           "name": "Toast",
           "target": ["master", "toast"]
         },
         {
-          "pattern": "control/TwoStepButton",
+          "pattern": "TwoStepButton",
           "name": "TwoStepButton",
           "target": ["master", "twostepbutton"]
         }

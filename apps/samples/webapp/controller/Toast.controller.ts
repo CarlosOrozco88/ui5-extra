@@ -1,11 +1,11 @@
-import Controller from 'sap/ui/core/mvc/Controller';
 import Toast from 'ui5Extra/Toast/Toast';
 import { $PopupSettings } from 'ui5Extra/Toast/Popup';
+import BaseController from './BaseController';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples.controller
  */
-export default class ToastView extends Controller {
+export default class ToastView extends BaseController {
   information() {
     Toast.information('Information message', { title: 'Information' });
   }

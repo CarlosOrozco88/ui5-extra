@@ -1,7 +1,7 @@
 {
   "entryPointStrategy": "expand",
   "entryPoints": ["./types"],
-  "out": "../../docs/text",
+  "out": "../../docs/api/text",
   "excludeExternals": true,
   "excludePrivate": true,
   "excludeNotDocumented": true,

@@ -1,7 +1,7 @@
 {
   "entryPointStrategy": "expand",
   "entryPoints": ["./types"],
-  "out": "../../docs/odatafetch",
+  "out": "../../docs/api/odatafetch",
   "excludeExternals": true,
   "excludePrivate": true,
   "excludeNotDocumented": true,

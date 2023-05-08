@@ -1,14 +1,13 @@
-import Controller from 'sap/ui/core/mvc/Controller';
 import AppComponent from '../Component';
-import { URLHelper } from 'sap/m/library';
 import JSONModel from 'sap/ui/model/json/JSONModel';
 import SplitContainer from 'sap/m/SplitContainer';
 import Component from '../Component';
+import BaseController from './BaseController';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples.controller
  */
-export default class App extends Controller {
+export default class App extends BaseController {
   appModel = new JSONModel({ master_visible: false, pressed_master: false });
 
   public onInit(): void {
@@ -28,10 +27,6 @@ export default class App extends Controller {
 
   getSplitContainer() {
     return this.getView()?.byId('app') as SplitContainer;
-  }
-
-  openWebsite(sUrl: string, bOpen = true) {
-    URLHelper.redirect(sUrl, bOpen);
   }
 
   toggleMaster() {

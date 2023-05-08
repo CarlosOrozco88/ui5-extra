@@ -15,6 +15,11 @@
             <ObjectAttribute
                 title="module"
                 text="ui5Extra/ODataFetch/ODataFetch" />
+            <ObjectAttribute
+                title="API reference"
+                text="ui5Extra.ODataFetch.ODataFetch"
+                active="true"
+                press="openWebsite('./api/odatafetch')" />
         </semantic:headerContent>
         <semantic:content>
             <layout:Grid defaultSpan="XL6 L6 M6 S12">
@@ -23,6 +28,12 @@
                     <Button
                         press="readData"
                         text="Read Data" />
+
+                    <FormattedText
+                        convertLinksToAnchorTags="ProtocolOnly"
+                        class="sapUiTinyMarginTopBottom"
+                        htmlText="To enable proxy, please visit: https://cors-anywhere.herokuapp.com/corsdemo"></FormattedText>
+
                     <Text text="Check Browser F12 -> Network tab. The read data buton has auto abort pending requests (you can press the button multiple times)" />
                 </VBox>
                 <List
