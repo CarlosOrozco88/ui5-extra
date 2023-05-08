@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["sap/m/library","sap/ui/core/mvc/Controller"],function(e,r){const t=e["URLHelper"];const n=r.extend("dev.carlosorozco.ui5Extra.samples.controller.BaseController",{openWebsite:function e(r){let n=arguments.length>1&&arguments[1]!==undefined?arguments[1]:true;t.redirect(r,n)}});return n});
+//# sourceMappingURL=BaseController.js.map

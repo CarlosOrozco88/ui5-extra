@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["ui5Extra/Toast/Toast","./BaseController"],function(e,t){function o(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const n=o(e);const s=o(t);const r=s.extend("dev.carlosorozco.ui5Extra.samples.controller.TextView",{pressText:function e(){n.show("Good job! :D",{title:"Button Pressed"})}});return r});
+//# sourceMappingURL=Text.controller.js.map

@@ -1,0 +1,92 @@
+<mvc:View
+    controllerName="dev.carlosorozco.ui5Extra.samples.controller.Text"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:ui5Extra="ui5Extra.Text">
+
+    <semantic:SemanticPage>
+        <semantic:titleHeading>
+            <Title
+                text="ui5Extra.Text.Text"
+                level="H2" />
+        </semantic:titleHeading>
+        <semantic:headerContent>
+            <ObjectAttribute
+                title="module"
+                text="ui5Extra/Text/Text" />
+            <ObjectAttribute
+                title="API reference"
+                text="ui5Extra.Text.Text"
+                active="true"
+                press="openWebsite('./api/text')" />
+        </semantic:headerContent>
+        <semantic:content>
+            <layout:Grid>
+                <VBox>
+                    <Title text="Colors" />
+                    <ui5Extra:Text text="Default" />
+                    <ui5Extra:Text
+                        text="Color red"
+                        color="red" />
+                    <ui5Extra:Text
+                        text="Background yellow"
+                        backgroundColor="yellow" />
+                    <ui5Extra:Text
+                        text="Combination"
+                        color="red"
+                        backgroundColor="yellow" />
+                </VBox>
+                <VBox>
+                    <Title text="Size" />
+                    <ui5Extra:Text
+                        text="1rem"
+                        fontSize="1rem" />
+                    <ui5Extra:Text
+                        text="1.5rem"
+                        fontSize="1.5rem" />
+                    <ui5Extra:Text
+                        text="2rem"
+                        fontSize="2rem" />
+                </VBox>
+                <VBox>
+                    <Title text="Style" />
+                    <ui5Extra:Text
+                        text="Font style"
+                        fontStyle="italic" />
+                    <ui5Extra:Text
+                        text="Font weight"
+                        fontWeight="bold" />
+                    <ui5Extra:Text
+                        text="Text decoration"
+                        textDecoration="Underline" />
+                    <ui5Extra:Text
+                        text="Font family"
+                        fontFamily="monospace" />
+                </VBox>
+                <VBox>
+                    <Title text="Cursor" />
+                    <ui5Extra:Text
+                        text="Cursor help"
+                        cursor="help" />
+                    <ui5Extra:Text
+                        text="Cursor copy"
+                        cursor="copy" />
+                </VBox>
+                <VBox>
+                    <Title text="Press event" />
+                    <ui5Extra:Text
+                        text="Press me"
+                        press="pressText" />
+                    <ui5Extra:Text
+                        text="Press me custom icon"
+                        press="pressText"
+                        cursor="copy" />
+                </VBox>
+            </layout:Grid>
+        </semantic:content>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
