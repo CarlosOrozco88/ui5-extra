@@ -1,0 +1,28 @@
+.TwoStepButton {
+  &.showLoadBar {
+    .sapMBtnInner {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        border-radius: 3px;
+      }
+    }
+    &.Final {
+      .sapMBtnInner {
+        transition-duration: inherit;
+        &::after {
+          width: 100%;
+          background-color: inherit;
+          transition-property: width;
+          transition-timing-function: linear;
+          transition-duration: inherit;
+          box-shadow: inherit;
+        }
+      }
+    }
+  }
+}

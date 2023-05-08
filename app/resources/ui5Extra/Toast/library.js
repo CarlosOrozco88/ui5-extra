@@ -1,0 +1,2 @@
+sap.ui.define(["sap/base/util/ObjectPath"],function(e){sap.ui.getCore().initLibrary({name:"ui5Extra.Toast",version:"0.0.1",dependencies:["sap.ui.core"],types:["ui5Extra.State"],interfaces:[],controls:["ui5Extra.Toast.Toast"],elements:[],noLibraryCSS:false});const t=e.get("ui5Extra.Toast");var r=function(e){e["None"]="None";e["Information"]="Information";e["Success"]="Success";e["Warning"]="Warning";e["Error"]="Error";return e}(r||{});t.State=r;var a={__esModule:true};a.State=r;return a});
+//# sourceMappingURL=library.js.map

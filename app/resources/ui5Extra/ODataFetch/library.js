@@ -1,0 +1,2 @@
+sap.ui.define(["sap/base/util/ObjectPath"],function(e){sap.ui.getCore().initLibrary({name:"ui5Extra.ODataFetch",version:"0.0.1",dependencies:["sap.ui.core"],types:[],interfaces:[],controls:["ui5Extra.ODataFetch.ODataFetch"],elements:[],noLibraryCSS:true});const t=e.get("ui5Extra.ODataFetch")});
+//# sourceMappingURL=library.js.map

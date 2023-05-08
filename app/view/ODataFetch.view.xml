@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="dev.carlosorozco.ui5Extra.samples.controller.ODataFetch"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:SemanticPage>
+        <semantic:titleHeading>
+            <Title
+                text="ui5Extra.ODataFetch.ODataFetch"
+                level="H2" />
+        </semantic:titleHeading>
+        <semantic:headerContent>
+            <ObjectAttribute
+                title="module"
+                text="ui5Extra/ODataFetch/ODataFetch" />
+        </semantic:headerContent>
+        <semantic:content>
+            <layout:Grid defaultSpan="XL6 L6 M6 S12">
+                <VBox>
+                    <Title text="Actions" />
+                    <Button
+                        press="readData"
+                        text="Read Data" />
+                    <Text text="Check Browser F12 -> Network tab. The read data buton has auto abort pending requests (you can press the button multiple times)" />
+                </VBox>
+                <List
+                    busy="{data>/busy}"
+                    busyIndicatorDelay="0"
+                    headerText="Fetched data"
+                    items="{data>/list}">
+                    <StandardListItem title="{data>Name}" />
+                </List>
+            </layout:Grid>
+        </semantic:content>
+
+    </semantic:SemanticPage>
+
+</mvc:View>

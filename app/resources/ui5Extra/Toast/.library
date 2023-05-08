@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+	<name>ui5Extra.Toast</name>
+	<vendor>CarlosOrozco88</vendor>
+	<version>0.0.1</version>
+	<copyright>${copyright}</copyright>
+	<title>ui5Extra Toast</title>
+	<documentation>ui5Extra Toast</documentation>
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+</library>

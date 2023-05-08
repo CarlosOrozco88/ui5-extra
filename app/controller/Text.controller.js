@@ -1,2 +1,2 @@
-"use strict";sap.ui.define(["dev/carlosorozco/ui5Extra/Toast","sap/ui/core/mvc/Controller"],function(e,t){function o(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const s=o(e);const r=t.extend("dev.carlosorozco.ui5Extra.samples.controller.TextView",{pressText:function e(){s.success("Pressed",{title:"Success"})}});return r});
+"use strict";sap.ui.define(["ui5Extra/Toast/Toast","sap/ui/core/mvc/Controller"],function(e,t){function o(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const n=o(e);const s=t.extend("dev.carlosorozco.ui5Extra.samples.controller.TextView",{pressText:function e(){n.show("Good job! :D",{title:"Button Pressed"})}});return s});
 //# sourceMappingURL=Text.controller.js.map

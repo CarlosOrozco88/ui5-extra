@@ -1,0 +1,2 @@
+sap.ui.define(["sap/base/util/ObjectPath"],function(e){sap.ui.getCore().initLibrary({name:"ui5Extra.Text",version:"0.0.1",dependencies:["sap.ui.core","sap.m"],types:[],interfaces:[],controls:["ui5Extra.Text.Text"],elements:[],noLibraryCSS:true});const t=e.get("ui5Extra.Text")});
+//# sourceMappingURL=library.js.map

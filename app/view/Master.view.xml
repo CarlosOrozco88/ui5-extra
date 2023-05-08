@@ -1,12 +1,11 @@
 <mvc:View
-	controllerName="dev.carlosorozco.ui5Extra.samples.controller.Master"
-	xmlns="sap.m"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:mvc="sap.ui.core.mvc">
+    controllerName="dev.carlosorozco.ui5Extra.samples.controller.Master"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:mvc="sap.ui.core.mvc">
 
-	<Page title="Modules List" class="sapUiContentPadding">
+    <Page title="Controls">
         <List
-            class="sapFDynamicPageAlignContent"
             items="{/Controls}"
             mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
             growing="true"
@@ -16,8 +15,8 @@
                 <StandardListItem
                     type="Navigation"
                     press=".onSelectionChange"
-                    title="{Name}">
-                </StandardListItem>
+                    title="{Name}"
+                    icon="{Icon}" />
             </items>
         </List>
     </Page>

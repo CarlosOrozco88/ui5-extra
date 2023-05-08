@@ -1,6 +1,6 @@
 "use strict";
 
-sap.ui.define(["sap/ui/core/mvc/Controller", "dev/carlosorozco/ui5Extra/Toast"], function (Controller, __Toast) {
+sap.ui.define(["sap/ui/core/mvc/Controller", "ui5Extra/Toast/Toast"], function (Controller, __Toast) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
   }

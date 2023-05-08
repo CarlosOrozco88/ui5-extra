@@ -1,0 +1,20 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:SemanticPage>
+        <semantic:titleHeading>
+            <Title
+                text="ui5Extra Controls"
+                level="H2" />
+        </semantic:titleHeading>
+        <semantic:content>
+            <Title text="Select a control from list" />
+
+        </semantic:content>
+
+    </semantic:SemanticPage>
+
+</mvc:View>

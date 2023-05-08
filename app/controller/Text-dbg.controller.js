@@ -1,6 +1,6 @@
 "use strict";
 
-sap.ui.define(["dev/carlosorozco/ui5Extra/Toast", "sap/ui/core/mvc/Controller"], function (__Toast, Controller) {
+sap.ui.define(["ui5Extra/Toast/Toast", "sap/ui/core/mvc/Controller"], function (__Toast, Controller) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
   }
@@ -10,8 +10,8 @@ sap.ui.define(["dev/carlosorozco/ui5Extra/Toast", "sap/ui/core/mvc/Controller"],
    */
   const TextView = Controller.extend("dev.carlosorozco.ui5Extra.samples.controller.TextView", {
     pressText: function _pressText() {
-      Toast.success('Pressed', {
-        title: 'Success'
+      Toast.show('Good job! :D', {
+        title: 'Button Pressed'
       });
     }
   });

@@ -39,10 +39,17 @@
         "sap.ui.core": {},
         "sap.ui.layout": {},
         "sap.ui.unified": {},
-        "sap.m": {}
+        "sap.m": {},
+        "ui5Extra.ODataFetch": {},
+        "ui5Extra.Text": {},
+        "ui5Extra.Toast": {},
+        "ui5Extra.TwoStepButton": {}
       }
     },
 
+    "resources": {
+      "css": [{ "uri": "css/styles.css" }]
+    },
     "handleValidation": true,
 
     "contentDensities": {
@@ -50,22 +57,33 @@
       "cozy": true
     },
 
-    "models": {},
+    "models": {
+      "": {
+        "preload": true,
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/api.json"
+      }
+    },
 
     "routing": {
       "config": {
         "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "viewPath": "dev.carlosorozco.ui5Extra.samples.view",
-        "controlId": "layout",
-        "controlAggregation": "beginColumnPages",
+        "controlId": "app",
+        "controlAggregation": "masterPages",
         "async": true
       },
       "routes": [
         {
           "pattern": "",
           "name": "master",
-          "target": "master"
+          "target": ["master", "main"]
+        },
+        {
+          "pattern": "control/ODataFetch",
+          "name": "ODataFetch",
+          "target": ["master", "odatafetch"]
         },
         {
           "pattern": "control/Text",
@@ -78,9 +96,9 @@
           "target": ["master", "toast"]
         },
         {
-          "pattern": "control/ODataFetch",
-          "name": "ODataFetch",
-          "target": ["master", "odatafetch"]
+          "pattern": "control/TwoStepButton",
+          "name": "TwoStepButton",
+          "target": ["master", "twostepbutton"]
         }
       ],
       "targets": {
@@ -89,23 +107,35 @@
           "viewLevel": 1,
           "viewId": "master"
         },
-        "text": {
-          "viewName": "Text",
-          "viewId": "text",
+        "main": {
+          "viewName": "Main",
           "viewLevel": 1,
-          "controlAggregation": "midColumnPages"
-        },
-        "toast": {
-          "viewName": "Toast",
-          "viewId": "toast",
-          "viewLevel": 1,
-          "controlAggregation": "midColumnPages"
+          "viewId": "main",
+          "controlAggregation": "detailPages"
         },
         "odatafetch": {
           "viewName": "ODataFetch",
           "viewId": "odatafetch",
           "viewLevel": 1,
-          "controlAggregation": "midColumnPages"
+          "controlAggregation": "detailPages"
+        },
+        "text": {
+          "viewName": "Text",
+          "viewId": "text",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
+        "toast": {
+          "viewName": "Toast",
+          "viewId": "toast",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
+        "twostepbutton": {
+          "viewName": "TwoStepButton",
+          "viewId": "twostepbutton",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
         }
       }
     }
