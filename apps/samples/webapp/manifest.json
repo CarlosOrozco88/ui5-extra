@@ -76,7 +76,7 @@
       "routes": [
         {
           "pattern": "",
-          "name": "master",
+          "name": "Main",
           "target": ["master", "main"]
         },
         {

@@ -26,17 +26,17 @@
                     text="ui5-extra"
                     subtle="true"
                     emphasized="true"
-                    href="./"
+                    press=".navTo('Main')"
                     class="title" />
 
                 <ToolbarSpacer />
                 <Button
                     icon="sap-icon://source-code"
-                    text="GitHub"
+                    text="{= !${Device>/system/phone} ? 'GitHub' : '' }"
                     press="openWebsite('https://github.com/CarlosOrozco88/ui5-extra')" />
                 <Button
                     icon="sap-icon://employee"
-                    text="Carlos Orozco"
+                    text="{= !${Device>/system/phone} ? 'Carlos Orozco' : '' }"
                     press="openWebsite('https://carlosorozco.dev')" />
             </Toolbar>
             <ScrollContainer

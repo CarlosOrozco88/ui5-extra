@@ -3,6 +3,7 @@ import JSONModel from 'sap/ui/model/json/JSONModel';
 import SplitContainer from 'sap/m/SplitContainer';
 import Component from '../Component';
 import BaseController from './BaseController';
+import Device, { system } from 'sap/ui/Device';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples.controller
@@ -31,10 +32,13 @@ export default class App extends BaseController {
 
   toggleMaster() {
     const app = this.getSplitContainer();
+
     if (app.isMasterShown()) {
       app.hideMaster();
+      app.backDetail();
     } else {
       app.showMaster();
+      app.backMaster();
       this.appModel.setProperty('/pressed_master', true);
     }
   }

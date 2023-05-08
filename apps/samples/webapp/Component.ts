@@ -1,5 +1,6 @@
 import UIComponent from 'sap/ui/core/UIComponent';
-import { support } from 'sap/ui/Device';
+import Device, { support } from 'sap/ui/Device';
+import JSONModel from 'sap/ui/model/json/JSONModel';
 
 /**
  * @namespace dev.carlosorozco.ui5Extra.samples
@@ -12,8 +13,8 @@ export default class Component extends UIComponent {
   private contentDensityClass: string;
 
   public init(): void {
-    // call the base component's init function
     super.init();
+    this.setModel(new JSONModel(Device), 'Device');
     this.getRouter().initialize();
   }
 
