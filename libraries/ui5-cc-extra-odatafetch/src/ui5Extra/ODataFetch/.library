@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+	<name>ui5Extra.ODataFetch</name>
+	<vendor>CarlosOrozco88</vendor>
+	<version>1.0.0</version>
+	<copyright>${copyright}</copyright>
+	<title>ui5Extra ODataFetch</title>
+	<documentation>ui5Extra ODataFetch</documentation>
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+</library>

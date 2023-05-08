@@ -1,0 +1,20 @@
+{
+  "Controls": [
+    {
+      "Name": "ODataFetch",
+      "Icon": "sap-icon://paper-plane"
+    },
+    {
+      "Name": "Text",
+      "Icon": "sap-icon://bold-text"
+    },
+    {
+      "Name": "Toast",
+      "Icon": "sap-icon://thing-type"
+    },
+    {
+      "Name": "TwoStepButton",
+      "Icon": "sap-icon://touch"
+    }
+  ]
+}

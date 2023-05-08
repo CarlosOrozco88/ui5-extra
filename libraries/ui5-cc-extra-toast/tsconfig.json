@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./src-gen",
+    "baseUrl": "./",
+    "paths": {
+      "ui5Extra/Toast/*": ["./src/ui5Extra/Toast/*"]
+    }
+  },
+  "include": ["src", "types"]
+}

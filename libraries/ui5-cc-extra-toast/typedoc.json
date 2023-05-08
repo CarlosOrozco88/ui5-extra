@@ -1,0 +1,9 @@
+{
+  "entryPointStrategy": "expand",
+  "entryPoints": ["./types"],
+  "out": "../../docs/toast",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeNotDocumented": true,
+  "excludeNotDocumentedKinds": ["Module"]
+}

@@ -17,20 +17,55 @@ jobs:
         run: |
           npm i
 
-      - name: Build library
-        working-directory: ./packages/ui5-extra
+      - name: Build package awaiter
+        working-directory: ./packages/awaiter
         run: |
           npm run build
 
-      - name: Build Docs
-        working-directory: ./packages/ui5-extra
+      - name: Build library odatafetch
+        working-directory: ./libraries/ui5-cc-extra-odatafetch
+        run: |
+          npm run build
+
+      - name: Build library text
+        working-directory: ./libraries/ui5-cc-extra-text
+        run: |
+          npm run build
+
+      - name: Build library toast
+        working-directory: ./libraries/ui5-cc-extra-toast
+        run: |
+          npm run build
+
+      - name: Build library twostepbutton
+        working-directory: ./libraries/ui5-cc-extra-twostepbutton
+        run: |
+          npm run build
+
+      - name: Build UI5 App Samples
+        working-directory: ./apps/samples
+        run: |
+          npm run build:opt
+
+      - name: Build library odatafetch docs
+        working-directory: ./libraries/ui5-cc-extra-odatafetch
         run: |
           npm run docs
 
-      - name: Build UI5 App Samples
-        working-directory: ./packages/samples
+      - name: Build library text docs
+        working-directory: ./libraries/ui5-cc-extra-text
         run: |
-          npm run build:opt
+          npm run docs
+
+      - name: Build library toast docs
+        working-directory: ./libraries/ui5-cc-extra-toast
+        run: |
+          npm run docs
+
+      - name: Build library twostepbutton docs
+        working-directory: ./libraries/ui5-cc-extra-twostepbutton
+        run: |
+          npm run docs
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

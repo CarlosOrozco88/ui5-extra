@@ -1,0 +1,30 @@
+{
+  "name": "@carlosorozco/ui5-cc-extra-twostepbutton",
+  "version": "0.0.1",
+  "description": "",
+  "author": "CarlosOrozco88",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/CarlosOrozco88/ui5-extra#README",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "run-s build:ts build:ui5",
+    "build:ts": "babel src --out-dir src-gen --extensions \".ts,.js\" --copy-files --include-dotfiles",
+    "build:ui5": "ui5 build --clean-dest",
+    "watch": "run-p watch:controls watch:ts",
+    "watch:ts": "babel src --out-dir src-gen --extensions \".ts,.js\" --copy-files --include-dotfiles  --watch",
+    "watch:controls": "npx @ui5/ts-interface-generator --watch",
+    "watch:docs": "npm run docs --watch",
+    "start": "run-p watch:ts start:ui5",
+    "ts-typecheck": "tsc --noEmit",
+    "lint:src": "eslint src",
+    "lint:test": "eslint test",
+    "lint": "run-s lint:src lint:test",
+    "docs": "typedoc --options typedoc.json"
+  },
+  "devDependencies": {
+    "@carlosorozco/awaiter": "*",
+    "@carlosorozco/eslint-config-custom": "*",
+    "ui5-middleware-livereload": "0.8.2",
+    "ui5-tooling-transpile": "0.7.8"
+  }
+}

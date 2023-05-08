@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./src-gen",
+    "baseUrl": "./",
+    "paths": {
+      "ui5Extra/TwoStepButton/*": ["./src/ui5Extra/TwoStepButton/*"]
+    }
+  },
+  "include": ["src", "types"]
+}

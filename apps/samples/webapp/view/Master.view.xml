@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="dev.carlosorozco.ui5Extra.samples.controller.Master"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <Page title="Controls">
+        <List
+            items="{/Controls}"
+            mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+            growing="true"
+            growingScrollToLoad="true"
+            selectionChange=".onSelectionChange">
+            <items>
+                <StandardListItem
+                    type="Navigation"
+                    press=".onSelectionChange"
+                    title="{Name}"
+                    icon="{Icon}" />
+            </items>
+        </List>
+    </Page>
+</mvc:View>

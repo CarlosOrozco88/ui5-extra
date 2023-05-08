@@ -11,5 +11,6 @@
     "sourceMap": false,
     "strictNullChecks": true,
     "strictPropertyInitialization": false
-  }
+  },
+  "exclude": ["node_modules", "dist", "docs", "tst-gen"]
 }

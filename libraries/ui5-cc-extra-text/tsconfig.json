@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./src-gen",
+    "baseUrl": "./",
+    "paths": {
+      "ui5Extra/Text/*": ["./src/ui5Extra/Text/*"]
+    }
+  },
+  "include": ["src", "types"]
+}

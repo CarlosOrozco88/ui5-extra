@@ -1,0 +1,27 @@
+{
+  "name": "@carlosorozco/ui5-extra-samples",
+  "version": "0.0.1",
+  "description": "Showcase of a TypeScript setup for developing UI5 applications",
+  "author": "SAP SE",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "ui5 build --clean-dest --dest ../../docs/app",
+    "build:opt": "ui5 build self-contained --dest ../../docs/app --clean-dest --all",
+    "start": "ui5 serve --port 8080 -o index.html",
+    "start:dist": "ui5 serve  --port 8080 -o index.html --config ui5-dist.yaml",
+    "ts-typecheck": "tsc --noEmit",
+    "lint": "eslint webapp"
+  },
+  "devDependencies": {
+    "@carlosorozco/awaiter": "*",
+    "@carlosorozco/ui5-cc-extra-odatafetch": "*",
+    "@carlosorozco/ui5-cc-extra-text": "*",
+    "@carlosorozco/ui5-cc-extra-toast": "*",
+    "@carlosorozco/ui5-cc-extra-twostepbutton": "*",
+    "@carlosorozco/eslint-config-custom": "*",
+    "ui5-middleware-livereload": "0.8.2",
+    "ui5-middleware-simpleproxy": "0.9.7",
+    "ui5-tooling-modules": "0.9.8",
+    "ui5-tooling-transpile": "0.7.8"
+  }
+}

@@ -13,12 +13,7 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parserOptions": {
-    "project": [
-      "./tsconfig.json",
-      "./apps/*/tsconfig.json",
-      "./libraries/*/tsconfig.json",
-      "./packages/*/tsconfig.json"
-    ],
+    "project": ["./tsconfig.json", "./packages/*/tsconfig.json"],
     "sourceType": "module"
   },
   "rules": {
@@ -26,7 +21,6 @@
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-unsafe-call": "off"
+    "@typescript-eslint/ban-types": "off"
   }
 }

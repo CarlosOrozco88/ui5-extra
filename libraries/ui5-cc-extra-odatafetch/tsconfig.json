@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./src-gen",
+    "baseUrl": "./",
+    "paths": {
+      "ui5Extra/ODataFetch/*": ["./src/ui5Extra/ODataFetch/*"]
+    }
+  },
+  "include": ["src", "types"]
+}

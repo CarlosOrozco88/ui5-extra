@@ -1,0 +1,143 @@
+{
+  "_version": "1.12.0",
+
+  "sap.app": {
+    "id": "dev.carlosorozco.ui5Extra.samples",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "ui5-extra Samples | Carlos Orozco",
+    "description": "ui5-extra Samples | Carlos Orozco",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "ach": "set-ach"
+  },
+
+  "sap.fiori": {},
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {},
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "dev.carlosorozco.ui5Extra.samples.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+
+    "dependencies": {
+      "minUI5Version": "1.104.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {},
+        "sap.m": {},
+        "ui5Extra.ODataFetch": {},
+        "ui5Extra.Text": {},
+        "ui5Extra.Toast": {},
+        "ui5Extra.TwoStepButton": {}
+      }
+    },
+
+    "resources": {
+      "css": [{ "uri": "css/styles.css" }]
+    },
+    "handleValidation": true,
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+      "": {
+        "preload": true,
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/api.json"
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "viewPath": "dev.carlosorozco.ui5Extra.samples.view",
+        "controlId": "app",
+        "controlAggregation": "masterPages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": ["master", "main"]
+        },
+        {
+          "pattern": "control/ODataFetch",
+          "name": "ODataFetch",
+          "target": ["master", "odatafetch"]
+        },
+        {
+          "pattern": "control/Text",
+          "name": "Text",
+          "target": ["master", "text"]
+        },
+        {
+          "pattern": "control/Toast",
+          "name": "Toast",
+          "target": ["master", "toast"]
+        },
+        {
+          "pattern": "control/TwoStepButton",
+          "name": "TwoStepButton",
+          "target": ["master", "twostepbutton"]
+        }
+      ],
+      "targets": {
+        "master": {
+          "viewName": "Master",
+          "viewLevel": 1,
+          "viewId": "master"
+        },
+        "main": {
+          "viewName": "Main",
+          "viewLevel": 1,
+          "viewId": "main",
+          "controlAggregation": "detailPages"
+        },
+        "odatafetch": {
+          "viewName": "ODataFetch",
+          "viewId": "odatafetch",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
+        "text": {
+          "viewName": "Text",
+          "viewId": "text",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
+        "toast": {
+          "viewName": "Toast",
+          "viewId": "toast",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
+        "twostepbutton": {
+          "viewName": "TwoStepButton",
+          "viewId": "twostepbutton",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        }
+      }
+    }
+  }
+}
