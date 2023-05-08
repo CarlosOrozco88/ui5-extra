@@ -35,8 +35,10 @@ sap.ui.define(["sap/ui/model/json/JSONModel", "./BaseController"], function (JSO
       const app = this.getSplitContainer();
       if (app.isMasterShown()) {
         app.hideMaster();
+        app.backDetail();
       } else {
         app.showMaster();
+        app.backMaster();
         this.appModel.setProperty('/pressed_master', true);
       }
     },

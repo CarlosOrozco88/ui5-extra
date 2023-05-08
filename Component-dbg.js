@@ -1,7 +1,7 @@
 "use strict";
 
-sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device"], function (UIComponent, sap_ui_Device) {
-  const support = sap_ui_Device["support"];
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "sap/ui/model/json/JSONModel"], function (UIComponent, Device, JSONModel) {
+  const support = Device["support"];
   /**
    * @namespace dev.carlosorozco.ui5Extra.samples
    */
@@ -10,8 +10,8 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device"], function (UIComponen
       manifest: 'json'
     },
     init: function _init() {
-      // call the base component's init function
       UIComponent.prototype.init.call(this);
+      this.setModel(new JSONModel(Device), 'Device');
       this.getRouter().initialize();
     },
     getContentDensityClass: function _getContentDensityClass() {
