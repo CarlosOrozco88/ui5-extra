@@ -4,7 +4,7 @@
     xmlns:semantic="sap.f.semantic"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:layout="sap.ui.layout"
-    xmlns:ui5Extra="ui5Extra-StepButton">
+    xmlns:ui5Extra="ui5Extra.StepButton">
 
     <semantic:SemanticPage>
         <semantic:titleHeading>

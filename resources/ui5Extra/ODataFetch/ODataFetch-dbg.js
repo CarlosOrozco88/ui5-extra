@@ -57,10 +57,6 @@ sap.ui.define(["sap/ui/model/odata/v2/ODataModel", "sap/base/util/deepClone"], f
       });
       return oResponse;
     }
-
-    /**
-     * @private
-     */
     _resolver(mParameters, resolve, reject) {
       this._abortRequest(mParameters);
       const oParams = {
@@ -81,37 +77,21 @@ sap.ui.define(["sap/ui/model/odata/v2/ODataModel", "sap/base/util/deepClone"], f
       };
       return oParams;
     }
-
-    /**
-     * @private
-     */
     _addRequest(request, mParameters) {
       const sAborterId = mParameters?.aborterId;
       if (!sAborterId) return;
       ODataFetch._requests.set(sAborterId, request);
     }
-
-    /**
-     * @private
-     */
     _getRequest(mParameters) {
       const sAborterId = mParameters?.aborterId;
       if (!sAborterId) return;
       return ODataFetch._requests.get(sAborterId);
     }
-
-    /**
-     * @private
-     */
     _abortRequest(mParameters) {
       const request = this._getRequest(mParameters);
       request?.abort?.();
       return this._removeRequest(mParameters);
     }
-
-    /**
-     * @private
-     */
     _removeRequest(mParameters) {
       const sAborterId = mParameters?.aborterId;
       if (!sAborterId) return false;
