@@ -5,16 +5,16 @@
       "Icon": "sap-icon://paper-plane"
     },
     {
+      "Name": "StepButton",
+      "Icon": "sap-icon://touch"
+    },
+    {
       "Name": "Text",
       "Icon": "sap-icon://bold-text"
     },
     {
       "Name": "Toast",
       "Icon": "sap-icon://thing-type"
-    },
-    {
-      "Name": "TwoStepButton",
-      "Icon": "sap-icon://touch"
     }
   ]
 }

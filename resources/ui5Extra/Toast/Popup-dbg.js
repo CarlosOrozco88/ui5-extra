@@ -1,9 +1,5 @@
-sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter", "sap/ui/core/IconPool"], function (___library, ManagedObject, __Awaiter, IconPool) {
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
-  }
+sap.ui.define(["./library", "sap/ui/base/ManagedObject", "sap/ui/core/IconPool"], function (___library, ManagedObject, IconPool) {
   const State = ___library["State"];
-  const Awaiter = _interopRequireDefault(__Awaiter);
   const NOTIFICATIONS_ID = 'ui5Extra-notifications';
   const MIN_DURATION = 1000;
 
@@ -45,7 +41,7 @@ sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter"
           defaultValue: State.None
         },
         /** Show or not the loader bar */
-        showLoader: {
+        showLoadBar: {
           type: 'boolean',
           group: 'Appearance',
           defaultValue: true
@@ -83,7 +79,7 @@ sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter"
       const oContent = this.getContent();
       if (!oContent) throw Error('No static area created');
       oULArea.append(oContent);
-      await Awaiter.tick();
+      await this.wait();
       oPopup.classList.add('show');
       this.autoClose();
       await new Promise(resolve => {
@@ -102,7 +98,7 @@ sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter"
       if (!oPopup) return;
       oPopup.classList.add('hide');
       oPopup.classList.remove('show');
-      await Awaiter.wait(250);
+      await this.wait(250);
       if (this.resolver) {
         this.fireOnClose();
         this.resolver();
@@ -177,8 +173,8 @@ sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter"
     createProgress: function _createProgress() {
       let oProgress;
       const duration = this.getDuration();
-      const showLoader = this.getShowLoader();
-      if (duration > 0 && showLoader) {
+      const showLoadBar = this.getShowLoadBar();
+      if (duration > 0 && showLoadBar) {
         let loaderDuration = duration - 250;
         if (loaderDuration < 0) loaderDuration = 0;
         oProgress = document.createElement('div');
@@ -239,6 +235,11 @@ sap.ui.define(["./library", "sap/ui/base/ManagedObject", "@carlosorozco/awaiter"
     },
     getIconInfo: function _getIconInfo(iconName) {
       return IconPool.getIconInfo(iconName);
+    },
+    wait: function _wait(milliseconds = 0) {
+      return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+      });
     }
   });
   return Popup;

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/base/util/ObjectPath"],function(t){sap.ui.getCore().initLibrary({name:"ui5Extra.StepButton",version:"0.0.1",dependencies:["sap.ui.core","sap.m"],types:[],interfaces:[],controls:["ui5Extra.StepButton.StepButton"],elements:[],noLibraryCSS:false});const e=t.get("ui5Extra.StepButton");var n=function(t){t["INITIAL"]="INITIAL";t["FINAL"]="FINAL";return t}(n||{});e.Step=n;var r={__esModule:true};r.Step=n;return r});
+//# sourceMappingURL=library.js.map
