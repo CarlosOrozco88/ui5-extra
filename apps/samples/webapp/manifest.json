@@ -42,7 +42,7 @@
         "ui5Extra.ODataFetch": {},
         "ui5Extra.Text": {},
         "ui5Extra.Toast": {},
-        "ui5Extra-StepButton": {}
+        "ui5Extra.StepButton": {}
       }
     },
     "resources": {

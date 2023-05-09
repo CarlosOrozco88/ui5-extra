@@ -77,10 +77,7 @@ export default class ODataFetch extends ODataModel {
     return oResponse as Promise<{ oData: undefined; oResponse: FetchResponse<undefined> }>;
   }
 
-  /**
-   * @private
-   */
-  _resolver<T>(mParameters: ResolverParams<T>, resolve: Function, reject: Function) {
+  private _resolver<T>(mParameters: ResolverParams<T>, resolve: Function, reject: Function) {
     this._abortRequest(mParameters);
 
     const oParams: ResolverParams<T> = {
@@ -99,37 +96,25 @@ export default class ODataFetch extends ODataModel {
     return oParams;
   }
 
-  /**
-   * @private
-   */
-  _addRequest(request: RequestType, mParameters?: AborterParams) {
+  private _addRequest(request: RequestType, mParameters?: AborterParams) {
     const sAborterId = mParameters?.aborterId;
     if (!sAborterId) return;
     ODataFetch._requests.set(sAborterId, request);
   }
 
-  /**
-   * @private
-   */
-  _getRequest(mParameters?: AborterParams) {
+  private _getRequest(mParameters?: AborterParams) {
     const sAborterId = mParameters?.aborterId;
     if (!sAborterId) return;
     return ODataFetch._requests.get(sAborterId);
   }
 
-  /**
-   * @private
-   */
-  _abortRequest(mParameters?: AborterParams) {
+  private _abortRequest(mParameters?: AborterParams) {
     const request = this._getRequest(mParameters);
     request?.abort?.();
     return this._removeRequest(mParameters);
   }
 
-  /**
-   * @private
-   */
-  _removeRequest(mParameters?: AborterParams) {
+  private _removeRequest(mParameters?: AborterParams) {
     const sAborterId = mParameters?.aborterId;
     if (!sAborterId) return false;
     return ODataFetch._requests.delete(sAborterId);

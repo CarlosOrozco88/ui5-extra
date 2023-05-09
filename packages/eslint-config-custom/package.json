@@ -1,6 +1,6 @@
 {
   "name": "@carlosorozco/eslint-config-custom",
   "version": "1.0.0",
-  "author": "CarlosOrozco88",
+  "main": "index.js",
   "private": true
 }

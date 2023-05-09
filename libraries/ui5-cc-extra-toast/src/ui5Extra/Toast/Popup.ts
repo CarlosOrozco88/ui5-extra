@@ -72,14 +72,11 @@ export default class Popup extends ManagedObject {
     }
   };
 
-  /** @private */
-  oContent?: HTMLLIElement;
+  private oContent?: HTMLLIElement;
 
-  /** @private */
-  resolver?: (value?: unknown) => unknown;
+  private resolver?: (value?: unknown) => unknown;
 
-  /** @private */
-  _closeTimeout?: ReturnType<typeof setTimeout>;
+  private _closeTimeout?: ReturnType<typeof setTimeout>;
 
   async show() {
     const oPopup = this.createPopup();

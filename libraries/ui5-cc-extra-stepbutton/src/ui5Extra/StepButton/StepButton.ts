@@ -89,11 +89,9 @@ export default class StepButton extends Button {
   /** @private */
   static renderer = ButtonRenderer;
 
-  /** @private */
-  _state = Step.INITIAL;
+  private _state = Step.INITIAL;
 
-  /** @private */
-  _stepTimeout: ReturnType<typeof setTimeout>;
+  private _stepTimeout: ReturnType<typeof setTimeout>;
 
   init() {
     super.init();
@@ -158,16 +156,14 @@ export default class StepButton extends Button {
     return this;
   }
 
-  /** @private */
-  _changeState(bState?: Step) {
+  private _changeState(bState?: Step) {
     if (bState === undefined) bState = this._isFinal() ? Step.INITIAL : Step.FINAL;
     this._state = bState;
     this._applyChangesState();
     return this._state;
   }
 
-  /** @private */
-  _applyChangesState() {
+  private _applyChangesState() {
     const bFinal = this._isFinal();
 
     this.toggleStyleClass('Initial', !bFinal);
@@ -181,8 +177,7 @@ export default class StepButton extends Button {
     this._handleTimeout();
   }
 
-  /** @private */
-  async _handleTimeout() {
+  private async _handleTimeout() {
     const bFinal = this._isFinal();
 
     clearTimeout(this._stepTimeout);
@@ -246,8 +241,7 @@ export default class StepButton extends Button {
     return this;
   }
 
-  /** @private */
-  _isFinal() {
+  private _isFinal() {
     return this._state === Step.FINAL;
   }
 }
