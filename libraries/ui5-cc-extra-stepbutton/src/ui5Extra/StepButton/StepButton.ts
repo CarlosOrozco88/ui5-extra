@@ -1,22 +1,19 @@
-// Provides control ui5Extra.TwoStepButton.TwoStepButton
+// Provides control ui5Extra.StepButton.StepButton
 import Button, { $ButtonSettings } from 'sap/m/Button';
 // @ts-ignore
 import ButtonRenderer from 'sap/m/ButtonRenderer';
 import { ButtonType } from 'sap/m/library';
+import { Step } from './library';
 
-enum STATE {
-  INITIAL = 'INITIAL',
-  FINAL = 'FINAL'
-}
 const SHOW_LOAD_BAR = false;
 /**
- * Constructor for a new <code>ui5Extra.TwoStepButton.TwoStepButton</code> control.
+ * Constructor for a new <code>ui5Extra.StepButton.StepButton</code> control.
  *
- * Extends sap.m.TwoStepButton and adds extra features
+ * Extends sap.m.StepButton and adds extra features
  *
- * @namespace ui5Extra.TwoStepButton
+ * @namespace ui5Extra.StepButton
  */
-export default class TwoStepButton extends Button {
+export default class StepButton extends Button {
   constructor(id?: string | $ButtonSettings);
   constructor(id?: string, settings?: $ButtonSettings);
   constructor(id?: string, settings?: $ButtonSettings) {
@@ -25,7 +22,7 @@ export default class TwoStepButton extends Button {
 
   /** @private */
   static readonly metadata: object = {
-    library: 'ui5Extra.TwoStepButton',
+    library: 'ui5Extra.StepButton',
     properties: {
       initialText: {
         type: 'string',
@@ -72,7 +69,7 @@ export default class TwoStepButton extends Button {
         group: 'Behavior',
         defaultValue: true
       },
-      stepDuration: {
+      duration: {
         type: 'int',
         group: 'Behavior',
         defaultValue: 3000
@@ -93,39 +90,55 @@ export default class TwoStepButton extends Button {
   static renderer = ButtonRenderer;
 
   /** @private */
-  _state = STATE.INITIAL;
+  _state = Step.INITIAL;
 
   /** @private */
   _stepTimeout: ReturnType<typeof setTimeout>;
 
   init() {
     super.init();
-    this.addStyleClass('TwoStepButton');
+    this.addStyleClass('StepButton');
     this.toggleStyleClass('showLoadBar', SHOW_LOAD_BAR);
     this._applyChangesState();
   }
 
   setText(sTextParam?: string) {
-    let sText = this._isFinal() ? this.getFinalText() : this.getInitialText();
-    super.setText(sText);
+    const initialText = this.getInitialText();
+    const finalText = this.getFinalText();
+
+    const sText = this._isFinal() ? finalText : initialText;
+
+    super.setText(sText || initialText);
     return this;
   }
 
   setIcon(sIconParam?: string) {
-    let sIcon = this._isFinal() ? this.getFinalIcon() : this.getInitialIcon();
-    super.setIcon(sIcon);
+    const initialIcon = this.getInitialIcon();
+    const finalIcon = this.getFinalIcon();
+
+    const sIcon = this._isFinal() ? finalIcon : initialIcon;
+
+    super.setIcon(sIcon || initialIcon);
     return this;
   }
 
   setTooltip(sTooltipParam: string) {
-    let sTooltip = this._isFinal() ? this.getFinalTooltip() : this.getInitialTooltip();
-    super.setTooltip(sTooltip);
+    const initialTooltip = this.getInitialTooltip();
+    const finalTooltip = this.getFinalTooltip();
+
+    const sTooltip = this._isFinal() ? finalTooltip : initialTooltip;
+
+    super.setTooltip(sTooltip || initialTooltip);
     return this;
   }
 
-  setType(sTypeParam?: string) {
-    let sType = this._isFinal() ? this.getFinalType() : this.getInitialType();
-    super.setType(sType);
+  setType(sTypeParam?: ButtonType) {
+    const initialType = this.getInitialType();
+    const finalType = this.getFinalType();
+
+    const sType = this._isFinal() ? finalType : initialType;
+
+    super.setType(sType || initialType);
     return this;
   }
 
@@ -146,8 +159,8 @@ export default class TwoStepButton extends Button {
   }
 
   /** @private */
-  _changeState(bState?: STATE) {
-    if (bState === undefined) bState = this._isFinal() ? STATE.INITIAL : STATE.FINAL;
+  _changeState(bState?: Step) {
+    if (bState === undefined) bState = this._isFinal() ? Step.INITIAL : Step.FINAL;
     this._state = bState;
     this._applyChangesState();
     return this._state;
@@ -174,12 +187,12 @@ export default class TwoStepButton extends Button {
 
     clearTimeout(this._stepTimeout);
     if (bFinal) {
-      const iStepTime = this.getStepDuration();
+      const iStepTime = this.getDuration();
       const oDomRef = this.getDomRef() as HTMLElement | null;
       if (oDomRef) oDomRef.style.transitionDuration = `${iStepTime}ms`;
 
       this._stepTimeout = setTimeout(() => {
-        this._changeState(STATE.INITIAL);
+        this._changeState(Step.INITIAL);
       }, iStepTime);
     }
   }
@@ -235,6 +248,6 @@ export default class TwoStepButton extends Button {
 
   /** @private */
   _isFinal() {
-    return this._state === STATE.FINAL;
+    return this._state === Step.FINAL;
   }
 }

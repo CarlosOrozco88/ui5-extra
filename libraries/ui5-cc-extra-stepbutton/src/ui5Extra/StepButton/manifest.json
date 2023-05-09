@@ -1,6 +1,6 @@
 {
   "sap.app": {
-    "id": "ui5Extra.TwoStepButton",
+    "id": "ui5Extra.StepButton",
     "type": "library",
     "applicationVersion": {
       "version": "${version}"

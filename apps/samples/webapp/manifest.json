@@ -42,7 +42,7 @@
         "ui5Extra.ODataFetch": {},
         "ui5Extra.Text": {},
         "ui5Extra.Toast": {},
-        "ui5Extra.TwoStepButton": {}
+        "ui5Extra-StepButton": {}
       }
     },
     "resources": {
@@ -85,6 +85,11 @@
           "target": ["master", "odatafetch"]
         },
         {
+          "pattern": "StepButton",
+          "name": "StepButton",
+          "target": ["master", "stepbutton"]
+        },
+        {
           "pattern": "Text",
           "name": "Text",
           "target": ["master", "text"]
@@ -93,11 +98,6 @@
           "pattern": "Toast",
           "name": "Toast",
           "target": ["master", "toast"]
-        },
-        {
-          "pattern": "TwoStepButton",
-          "name": "TwoStepButton",
-          "target": ["master", "twostepbutton"]
         }
       ],
       "targets": {
@@ -118,6 +118,12 @@
           "viewLevel": 1,
           "controlAggregation": "detailPages"
         },
+        "stepbutton": {
+          "viewName": "StepButton",
+          "viewId": "stepbutton",
+          "viewLevel": 1,
+          "controlAggregation": "detailPages"
+        },
         "text": {
           "viewName": "Text",
           "viewId": "text",
@@ -127,12 +133,6 @@
         "toast": {
           "viewName": "Toast",
           "viewId": "toast",
-          "viewLevel": 1,
-          "controlAggregation": "detailPages"
-        },
-        "twostepbutton": {
-          "viewName": "TwoStepButton",
-          "viewId": "twostepbutton",
           "viewLevel": 1,
           "controlAggregation": "detailPages"
         }

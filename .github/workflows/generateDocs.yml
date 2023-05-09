@@ -17,11 +17,6 @@ jobs:
         run: |
           npm i
 
-      - name: Build package awaiter
-        working-directory: ./packages/awaiter
-        run: |
-          npm run build
-
       - name: Build library odatafetch
         working-directory: ./libraries/ui5-cc-extra-odatafetch
         run: |
@@ -37,8 +32,8 @@ jobs:
         run: |
           npm run build
 
-      - name: Build library twostepbutton
-        working-directory: ./libraries/ui5-cc-extra-twostepbutton
+      - name: Build library stepbutton
+        working-directory: ./libraries/ui5-cc-extra-stepbutton
         run: |
           npm run build
 
@@ -62,8 +57,8 @@ jobs:
         run: |
           npm run docs
 
-      - name: Build library twostepbutton docs
-        working-directory: ./libraries/ui5-cc-extra-twostepbutton
+      - name: Build library stepbutton docs
+        working-directory: ./libraries/ui5-cc-extra-stepbutton
         run: |
           npm run docs
 

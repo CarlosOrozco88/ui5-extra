@@ -17,5 +17,9 @@
   "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "workbench.colorTheme": "One Dark Pro",
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "search.exclude": {
+    "**/dist": true,
+    "**/src-gen": true
+  }
 }

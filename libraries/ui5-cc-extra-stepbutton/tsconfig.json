@@ -5,7 +5,7 @@
     "outDir": "./src-gen",
     "baseUrl": "./",
     "paths": {
-      "ui5Extra/TwoStepButton/*": ["./src/ui5Extra/TwoStepButton/*"]
+      "ui5Extra/StepButton/*": ["./src/ui5Extra/StepButton/*"]
     }
   },
   "include": ["src", "types"]

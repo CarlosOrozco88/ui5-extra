@@ -13,11 +13,10 @@
     "lint": "eslint webapp"
   },
   "devDependencies": {
-    "@carlosorozco/awaiter": "*",
     "@carlosorozco/ui5-cc-extra-odatafetch": "*",
     "@carlosorozco/ui5-cc-extra-text": "*",
     "@carlosorozco/ui5-cc-extra-toast": "*",
-    "@carlosorozco/ui5-cc-extra-twostepbutton": "*",
+    "@carlosorozco/ui5-cc-extra-stepbutton": "*",
     "@carlosorozco/eslint-config-custom": "*",
     "ui5-middleware-livereload": "0.8.2",
     "ui5-middleware-simpleproxy": "0.9.7",

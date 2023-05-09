@@ -1,6 +1,5 @@
 import { State } from './library';
 import ManagedObject from 'sap/ui/base/ManagedObject';
-import Awaiter from '@carlosorozco/awaiter';
 import IconPool from 'sap/ui/core/IconPool';
 import { IconInfo } from 'ui5Extra/Toast/IconInfo';
 
@@ -52,7 +51,7 @@ export default class Popup extends ManagedObject {
         defaultValue: State.None
       },
       /** Show or not the loader bar */
-      showLoader: {
+      showLoadBar: {
         type: 'boolean',
         group: 'Appearance',
         defaultValue: true
@@ -92,7 +91,7 @@ export default class Popup extends ManagedObject {
     if (!oContent) throw Error('No static area created');
     oULArea.append(oContent);
 
-    await Awaiter.tick();
+    await this.wait();
     oPopup.classList.add('show');
     this.autoClose();
 
@@ -116,7 +115,8 @@ export default class Popup extends ManagedObject {
 
     oPopup.classList.add('hide');
     oPopup.classList.remove('show');
-    await Awaiter.wait(250);
+
+    await this.wait(250);
 
     if (this.resolver) {
       this.fireOnClose();
@@ -212,9 +212,9 @@ export default class Popup extends ManagedObject {
   createProgress() {
     let oProgress;
     const duration = this.getDuration();
-    const showLoader = this.getShowLoader();
+    const showLoadBar = this.getShowLoadBar();
 
-    if (duration > 0 && showLoader) {
+    if (duration > 0 && showLoadBar) {
       let loaderDuration = duration - 250;
       if (loaderDuration < 0) loaderDuration = 0;
 
@@ -290,5 +290,11 @@ export default class Popup extends ManagedObject {
 
   getIconInfo(iconName: string) {
     return IconPool.getIconInfo(iconName) as IconInfo;
+  }
+
+  private wait(milliseconds = 0) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    });
   }
 }

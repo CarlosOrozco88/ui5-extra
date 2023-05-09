@@ -14,7 +14,7 @@ declare module 'ui5Extra/Toast/Popup' {
     maxLines?: number | PropertyBindingInfo | `{${string}}`;
     duration?: number | PropertyBindingInfo | `{${string}}`;
     state?: State | PropertyBindingInfo | `{${string}}`;
-    showLoader?: boolean | PropertyBindingInfo | `{${string}}`;
+    showLoadBar?: boolean | PropertyBindingInfo | `{${string}}`;
     showClose?: boolean | PropertyBindingInfo | `{${string}}`;
     icon?: URI | PropertyBindingInfo | `{${string}}`;
     iconClose?: URI | PropertyBindingInfo | `{${string}}`;
@@ -48,9 +48,9 @@ declare module 'ui5Extra/Toast/Popup' {
     getState(): State;
     setState(state: State): this;
 
-    // property: showLoader
-    getShowLoader(): boolean;
-    setShowLoader(showLoader: boolean): this;
+    // property: showLoadBar
+    getShowLoadBar(): boolean;
+    setShowLoadBar(showLoadBar: boolean): this;
 
     // property: showClose
     getShowClose(): boolean;

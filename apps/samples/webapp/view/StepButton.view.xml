@@ -1,44 +1,44 @@
 <mvc:View
-    controllerName="dev.carlosorozco.ui5Extra.samples.controller.TwoStepButton"
+    controllerName="dev.carlosorozco.ui5Extra.samples.controller.StepButton"
     xmlns="sap.m"
     xmlns:semantic="sap.f.semantic"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:layout="sap.ui.layout"
-    xmlns:ui5Extra="ui5Extra.TwoStepButton">
+    xmlns:ui5Extra="ui5Extra-StepButton">
 
     <semantic:SemanticPage>
         <semantic:titleHeading>
             <Title
-                text="ui5Extra.TwoStepButton.TwoStepButton"
+                text="ui5Extra.StepButton.StepButton"
                 level="H2" />
         </semantic:titleHeading>
         <semantic:headerContent>
             <ObjectAttribute
                 title="module"
-                text="ui5Extra/TwoStepButton/TwoStepButton" />
+                text="ui5Extra/StepButton/StepButton" />
             <ObjectAttribute
                 title="API reference"
-                text="ui5Extra.TwoStepButton.TwoStepButton"
+                text="ui5Extra.StepButton.StepButton"
                 active="true"
-                press="openWebsite('./api/twostepbutton')" />
+                press="openWebsite('./api/stepbutton')" />
         </semantic:headerContent>
         <semantic:content>
             <layout:Grid>
                 <VBox>
                     <Title text="Basic" />
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialText="Remove"
                         initialIcon="sap-icon://delete"
                         initialTooltip="Do you want to remove this item?"
                         initialType="Transparent"
                         finalText="¿Confirm?"
-                        finalIcon="sap-icon://delete"
                         finalTooltip="Are you sure?"
                         finalType="Negative"
                         finalPress="pressRemoveFinal"
+                        duration="1000000"
                         busyIndicatorDelay="0" />
 
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialIcon="sap-icon://accept"
                         initialType="Default"
                         initialTooltip="Do action?"
@@ -50,7 +50,7 @@
                         busyIndicatorDelay="0"
                         busyIndicatorSize="Small" />
 
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialText="Confirm"
                         initialIcon="sap-icon://save"
                         initialType="Accept"
@@ -61,12 +61,11 @@
                         finalType="Critical"
                         finalTooltip="Are you sure?"
                         finalPress="pressConfirmFinal"
-                        stepDuration="5000"
                         busyIndicatorDelay="0" />
                 </VBox>
                 <VBox>
                     <Title text="Load bar" />
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialText="Remove"
                         initialIcon="sap-icon://delete"
                         initialTooltip="Do you want to remove this item?"
@@ -79,7 +78,7 @@
                         busyIndicatorDelay="0"
                         showLoadBar="true" />
 
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialIcon="sap-icon://accept"
                         initialType="Default"
                         initialTooltip="Do action?"
@@ -92,7 +91,7 @@
                         busyIndicatorSize="Small"
                         showLoadBar="true" />
 
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         initialText="Confirm"
                         initialIcon="sap-icon://save"
                         initialType="Accept"
@@ -103,20 +102,34 @@
                         finalType="Critical"
                         finalTooltip="Are you sure?"
                         finalPress="pressConfirmFinal"
-                        stepDuration="5000"
                         busyIndicatorDelay="0"
                         showLoadBar="true" />
                 </VBox>
                 <VBox>
+                    <Title text="Duration" />
+                    <ui5Extra:StepButton
+                        initialText="1s"
+                        duration="1000"
+                        showLoadBar="true" />
+                    <ui5Extra:StepButton
+                        initialText="5s"
+                        duration="5000"
+                        showLoadBar="true" />
+                    <ui5Extra:StepButton
+                        initialText="10s"
+                        duration="10000"
+                        showLoadBar="true" />
+                </VBox>
+                <VBox>
                     <Title text="Enabled" />
-                    <ui5Extra:TwoStepButton
+                    <ui5Extra:StepButton
                         enabledStep="false"
                         initialText="One step"
                         initialType="Emphasized"
                         initialTooltip="Not enabled step"
                         initialPress="pressNoStep"
-                        stepDuration="1500" />
-                    <ui5Extra:TwoStepButton
+                        duration="1500" />
+                    <ui5Extra:StepButton
                         initialText="Disabled"
                         initialType="Emphasized"
                         enabled="false"

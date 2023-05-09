@@ -6,7 +6,7 @@
 
     <Page title="Controls">
         <List
-            items="{/Controls}"
+            items="{path:'/Controls',sorter:{path:'Name'}}"
             mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
             growing="true"
             growingScrollToLoad="true"

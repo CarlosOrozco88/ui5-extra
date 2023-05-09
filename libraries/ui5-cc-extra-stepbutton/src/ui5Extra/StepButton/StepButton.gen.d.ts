@@ -4,12 +4,12 @@ import Event from "sap/ui/base/Event";
 import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 import { $ButtonSettings } from "sap/m/Button";
 
-declare module "./TwoStepButton" {
+declare module "./StepButton" {
 
     /**
      * Interface defining the settings object used in constructor calls
      */
-    interface $TwoStepButtonSettings extends $ButtonSettings {
+    interface $StepButtonSettings extends $ButtonSettings {
         initialText?: string | PropertyBindingInfo;
         initialTooltip?: string | PropertyBindingInfo;
         initialIcon?: URI | PropertyBindingInfo | `{${string}}`;
@@ -19,13 +19,13 @@ declare module "./TwoStepButton" {
         finalIcon?: URI | PropertyBindingInfo | `{${string}}`;
         finalType?: ButtonType | PropertyBindingInfo | `{${string}}`;
         enabledStep?: boolean | PropertyBindingInfo | `{${string}}`;
-        stepDuration?: number | PropertyBindingInfo | `{${string}}`;
+        duration?: number | PropertyBindingInfo | `{${string}}`;
         showLoadBar?: boolean | PropertyBindingInfo | `{${string}}`;
         initialPress?: (event: Event) => void;
         finalPress?: (event: Event) => void;
     }
 
-    export default interface TwoStepButton {
+    export default interface StepButton {
 
         // property: initialText
         getInitialText(): string;
@@ -63,9 +63,9 @@ declare module "./TwoStepButton" {
         getEnabledStep(): boolean;
         setEnabledStep(enabledStep: boolean): this;
 
-        // property: stepDuration
-        getStepDuration(): number;
-        setStepDuration(stepDuration: number): this;
+        // property: duration
+        getDuration(): number;
+        setDuration(duration: number): this;
 
         // property: showLoadBar
         getShowLoadBar(): boolean;
