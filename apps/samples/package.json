@@ -13,10 +13,10 @@
     "lint": "eslint webapp"
   },
   "devDependencies": {
-    "@carlosorozco/ui5-cc-extra-odatafetch": "*",
-    "@carlosorozco/ui5-cc-extra-text": "*",
-    "@carlosorozco/ui5-cc-extra-toast": "*",
-    "@carlosorozco/ui5-cc-extra-stepbutton": "*",
+    "@ui5extra/ui5-cc-odatafetch": "*",
+    "@ui5extra/ui5-cc-text": "*",
+    "@ui5extra/ui5-cc-toast": "*",
+    "@ui5extra/ui5-cc-stepbutton": "*",
     "@carlosorozco/eslint-config-custom": "*",
     "@carlosorozco/tsconfig": "*",
     "ui5-middleware-livereload": "0.8.2",

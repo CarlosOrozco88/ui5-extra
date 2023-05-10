@@ -6,7 +6,7 @@
     "paths": {
       "dev/carlosorozco/ui5Extra/samples/*": ["./webapp/*"]
     },
-    "typeRoots": ["node_modules/@types", "node_modules/@carlosorozco"]
+    "typeRoots": ["../../node_modules/@types", "../../node_modules/@ui5Extra"]
   },
   "include": ["./webapp/**/*"]
 }
