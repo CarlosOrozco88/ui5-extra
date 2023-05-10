@@ -35,7 +35,6 @@
                         finalTooltip="Are you sure?"
                         finalType="Negative"
                         finalPress="pressRemoveFinal"
-                        duration="1000000"
                         busyIndicatorDelay="0" />
 
                     <ui5Extra:StepButton
